@@ -13,7 +13,9 @@
     "upd:i": "npm-check-updates -u && npm i && npm audit fix"
   },
   "devDependencies": {
+    "@material/dom": "^13.0.0",
     "@material/elevation": "^13.0.0",
+    "@material/theme": "^13.0.0",
     "@material/typography": "^13.0.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
