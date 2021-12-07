@@ -1,9 +1,8 @@
 <script>
     export let title;
-    export let doi;
-    export let isAr;
-    export let isMr;
+    export let year;
     export let authors;
+    export let doi;
 
     const imgSrc = `./img/${doi.replace("/", "_")}.png`;
     const doiUrl = `https://doi.org/${doi}`;
@@ -16,9 +15,12 @@
 </script>
 
 <div class="Tile">
-    <h3>
+    <h5>
         {title}
-    </h3>
+    </h5>
+    <div class="year">
+        {year}
+    </div>
     <div>
         <!-- <img src={imgSrc} alt="teaser" /> -->
     </div>
@@ -33,11 +35,15 @@
 <style>
     .Tile {
         display: inline-block;
-        border: 1px solid grey;
-        width: 95%;
-        height: 95%;
+        /* border: 1px solid grey; */
+        width: 265px;
+        height: 265px;
         padding: 5px;
-        border-radius: 5px;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(127, 127, 127, 0.75);
+    }
+    .Tile h5 {
+        margin: 0;
     }
     .Tile img {
         width: 95%;

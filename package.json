@@ -6,6 +6,9 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
+    "prepare": "npm run smui-theme-light && npm run smui-theme-dark",
+    "smui-theme-light": "smui-theme compile public/build/smui.css -i src/theme",
+    "smui-theme-dark": "smui-theme compile public/build/smui-dark.css -i src/theme/dark",
     "upd": "npm-check-updates -u",
     "upd:i": "npm-check-updates -u && npm i && npm audit fix"
   },
@@ -18,6 +21,7 @@
     "@smui/checkbox": "^6.0.0-beta.4",
     "@smui/chips": "^6.0.0-beta.4",
     "@smui/common": "^6.0.0-beta.4",
+    "@smui/form-field": "^6.0.0-beta.4",
     "@smui/icon-button": "^6.0.0-beta.4",
     "@smui/segmented-button": "^6.0.0-beta.4",
     "@smui/slider": "^6.0.0-beta.4",
@@ -28,6 +32,7 @@
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
+    "smui-theme": "^6.0.0-beta.4",
     "svelte": "^3.44.2"
   },
   "dependencies": {

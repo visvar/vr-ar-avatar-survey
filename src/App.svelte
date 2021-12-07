@@ -4,29 +4,45 @@
     import SegmentedButton, { Segment } from "@smui/segmented-button";
     import { Label } from "@smui/common";
 
-    // import "../node_modules/svelte-material-ui/bare.css";
     import "svelte-material-ui/bare.css";
-    //import * as d3 from 'd3';
     import Filter from "./Filter.svelte";
     import TileGrid from "./TileGrid.svelte";
+    import BubbleChart from "./BubbleChart.svelte";
 
     // View
     let views = ["Tiles", "Bubble", "PCP"];
     let currentView = "Tiles";
 
     // Filter
-    let filterStateDefault = {
-        yearRange: [],
+    let minYear;
+    let maxYear;
+    let venues;
+    let modalities;
+    const updateFilter = () => {
+        if (!allData) {
+            return;
+        }
+        const venueSet = new Set(venues);
+        data = allData.filter((d) => {
+            return (
+                d.year >= minYear &&
+                d.year <= maxYear &&
+                venueSet.has(d.conference)
+            );
+        });
+        console.log(data);
     };
+    $: updateFilter();
 
     // Data loading
     let loading = false;
-    let data = [];
+    let allData = null;
+    let data = null;
     const loadData = async () => {
         loading = true;
         const response = await fetch("./data.json");
         data = await response.json();
-
+        allData = data;
         if (response.ok) {
             loading = false;
         } else {
@@ -65,23 +81,33 @@
                     </SegmentedButton>
                 </Section>
                 <Section align="end" toolbar>
-                    <IconButton class="material-icons" aria-label="Download"
-                        >file_download</IconButton
-                    >
                     <IconButton
                         class="material-icons"
                         aria-label="Bookmark this page">bookmark</IconButton
+                    >
+                    <a href="https://visvar.github.io" target="_blank"
+                        >Our team</a
                     >
                 </Section>
             </Row>
         </TopAppBar>
         <div class="flexor-content">
+            <button on:click={updateFilter}>filter</button>
             <main>
                 {#if loading === true}
                     Loading...
-                {:else}
-                    <Filter />
-                    <TileGrid {data} />
+                {:else if data !== null}
+                    <Filter
+                        {data}
+                        bind:minYear
+                        bind:maxYear
+                        bind:selectedVenues={venues}
+                    />
+                    {#if currentView === "Tiles"}
+                        <TileGrid {data} />
+                    {:else if currentView === "Bubble"}
+                        <BubbleChart {data} />
+                    {/if}
                 {/if}
             </main>
         </div>
@@ -90,16 +116,12 @@
 
 <style>
     .top-app-bar-container {
-        /* max-width: 480px; */
         width: 100%;
-        /* height: 2000px; */
-        /* height: 100%; */
         margin: 0 0 0 0;
         overflow: auto;
         display: inline-block;
         /* border: 1px solid            var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.1)); */
         background-color: var(--mdc-theme-background, #fff);
-        /* background-color: cornflowerblue; */
     }
 
     @media (max-width: 480px) {
@@ -120,16 +142,12 @@
 
     .flexor-content {
         flex-basis: 0;
-        /* height: 0; */
-        /* height: 100%; */
         flex-grow: 1;
-        /* flex-grow: 100%; */
         overflow: auto;
     }
 
     main {
-        /* height: 100%; */
         display: grid;
-        grid-template-columns: 300px auto;
+        grid-template-columns: 320px auto;
     }
 </style>

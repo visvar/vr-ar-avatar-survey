@@ -3,12 +3,34 @@
 
     import Slider from "@smui/slider";
     import Button from "@smui/button";
-    // import { extent } from "d3";
+    import Checkbox from "@smui/checkbox";
+    import FormField from "@smui/form-field";
+    import * as d3 from "d3";
 
-    // const yearRange = extent(data, (d) => d.year);
-    const yearRange = [2010, 2021];
-    let minYear = yearRange[0];
-    let maxYear = yearRange[1];
+    const yearRange = d3.extent(data, (d) => d.year);
+    export let minYear = yearRange[0];
+    export let maxYear = yearRange[1];
+
+    const count = (data, accessor, sortBy = "none") => {
+        const result = d3.groups(data, accessor).map(([key, d]) => {
+            return { key, count: d.length };
+        });
+        if (sortBy === "countDesc") {
+            result.sort((a, b) => b.count - a.count);
+        } else if (sortBy === "countInc") {
+            result.sort((a, b) => a.count - b.count);
+        }
+        return result;
+    };
+
+    const venues = count(data, (d) => d.conference, "countDesc");
+    let options = venues.map((d) => {
+        return {
+            name: d.key,
+            disabled: false,
+        };
+    });
+    export let selectedVenues = options.map((d) => d.name);
 </script>
 
 <!--
@@ -20,7 +42,7 @@ It will show up on hover.
 - You can also use code blocks here.
 - Usage:
   ```tsx
-  <main name="Arethra">
+  <main name="exampleName">
   ```
 -->
 <main>
@@ -52,8 +74,40 @@ It will show up on hover.
     </div>
 
     <h2>Venue</h2>
-    <h2>Citations</h2>
+
+    <div>
+        {#each options as option}
+            <FormField>
+                <Checkbox
+                    bind:group={selectedVenues}
+                    value={option.name}
+                    disabled={option.disabled}
+                />
+                <span slot="label"
+                    >{option.name}{option.disabled ? " (disabled)" : ""}</span
+                >
+            </FormField>
+        {/each}
+    </div>
+
+    <div style="margin-top: 1em;">
+        <Button
+            on:click={() => {
+                selectedVenues = options.map((d) => d.name);
+            }}
+        >
+            All venues
+        </Button>
+    </div>
+
     <h2>Modality</h2>
+    <div>...</div>
+
+    <h2>Participant count</h2>
+    <div>...</div>
+
+    <h2>Research fields</h2>
+    <div>...</div>
 </main>
 
 <style>
