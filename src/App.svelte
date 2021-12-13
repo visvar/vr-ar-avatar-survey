@@ -143,6 +143,8 @@
         flex-basis: 0;
         flex-grow: 1;
         overflow: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     main {
