@@ -1,7 +1,8 @@
 <script>
     export let data;
 
-    import * as d3 from "d3";
+    // import * as d3 from "d3";
+    import { groups, schemeTableau10 } from "d3";
     import { children } from "svelte/internal";
     import { BubbleChart } from "./BubbleChart.js";
 
@@ -17,11 +18,10 @@
         if (!container) {
             return;
         }
-        let fields = d3
-            .groups(
-                data.flatMap((p) => p.fieldOfStudy),
-                (d) => d
-            )
+        let fields = groups(
+            data.flatMap((p) => p.fieldOfStudy),
+            (d) => d
+        )
             .sort((a, b) => b[1].length - a[1].length)
             .map(([key, group]) => {
                 return {
@@ -30,7 +30,7 @@
                 };
             })
             .filter((d) => d.count > 1);
-        console.log("rendering bubble chart");
+        // console.log("rendering bubble chart");
         let svg = BubbleChart(fields, {
             // label: (d) => d.key,
             label: (d) => `${d.key.split(" ").join("\n")}\n(${d.count})`,
@@ -38,18 +38,18 @@
             group: (d) => fieldGroups.get(d.key),
             title: (d) => `${d.key}\n(${d.count} times)`,
             link: (d) => null,
-            width: window.innerWidth - 330,
-            colors: d3.schemeTableau10,
+            width: Math.min(window.innerWidth - 330, window.innerHeight - 100),
+            colors: schemeTableau10,
             fillOpacity: 0.5,
         });
-        console.log("appending bubble chart");
+        // console.log("appending bubble chart");
         if (container.children.length > 0) {
             container.removeChild(container.children[0]);
         }
         container.appendChild(svg);
     };
 
-    // Work around to update chart
+    // Work around to update chart when data changes
     $: if (data) {
         showVis();
     }

@@ -21,7 +21,7 @@
         grid-template-columns: repeat(auto-fill, 280px);
         grid-template-rows: repeat(auto-fill, 280px);
         gap: 6px;
-        /* margin-bottom: 10px; */
+        margin-bottom: 10px;
         padding: 0 6px 16px 0;
     }
 </style>

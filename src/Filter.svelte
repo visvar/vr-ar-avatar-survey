@@ -24,13 +24,13 @@
     };
 
     const venues = count(data, (d) => d.conference, "countDesc");
-    let options = venues.map((d) => {
+    let venueOptions = venues.map((d) => {
         return {
             name: d.key,
             disabled: false,
         };
     });
-    export let selectedVenues = options.map((d) => d.name);
+    export let selectedVenues = venueOptions.map((d) => d.name);
 </script>
 
 <!--
@@ -48,7 +48,7 @@ It will show up on hover.
 <main>
     <h1>Filter</h1>
 
-    <h2>Years</h2>
+    <h2>Year: {minYear} - {maxYear}</h2>
 
     <Slider
         range
@@ -57,8 +57,8 @@ It will show up on hover.
         min={yearRange[0]}
         max={yearRange[1]}
         step={1}
-        discrete
-        tickMarks
+        discrete={true}
+        tickMarks={false}
         input$aria-label="Years"
     />
 
@@ -73,10 +73,14 @@ It will show up on hover.
         </Button>
     </div>
 
-    <h2>Venue</h2>
+    <h2>
+        Venue: {selectedVenues.length === venues.length
+            ? "all"
+            : selectedVenues.length}
+    </h2>
 
     <div>
-        {#each options as option}
+        {#each venueOptions as option}
             <FormField>
                 <Checkbox
                     bind:group={selectedVenues}
@@ -93,7 +97,7 @@ It will show up on hover.
     <div style="margin-top: 1em;">
         <Button
             on:click={() => {
-                selectedVenues = options.map((d) => d.name);
+                selectedVenues = venueOptions.map((d) => d.name);
             }}
         >
             All venues
@@ -106,7 +110,7 @@ It will show up on hover.
     <h2>Participant count</h2>
     <div>...</div>
 
-    <h2>Research fields</h2>
+    <h2>Research field</h2>
     <div>...</div>
 </main>
 

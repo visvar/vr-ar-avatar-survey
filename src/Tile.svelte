@@ -39,8 +39,8 @@
         width: 265px;
         height: 265px;
         padding: 5px;
-        border-radius: 4px;
-        box-shadow: 0 0 5px rgba(127, 127, 127, 0.75);
+        border-radius: 3.5px;
+        box-shadow: 0 0 5px rgba(127, 127, 127, 0.7);
     }
     .Tile h5 {
         margin: 0;

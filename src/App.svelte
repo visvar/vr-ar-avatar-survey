@@ -32,7 +32,10 @@
         });
         console.log(data);
     };
-    $: updateFilter();
+    // Update data when filter variables change
+    $: if (minYear || maxYear || venues || modalities) {
+        updateFilter();
+    }
 
     // Data loading
     let loading = false;
@@ -61,7 +64,7 @@
             variant="static"
             prominent={false}
             dense={true}
-            color="secondary"
+            color="primary"
         >
             <Row>
                 <Section>
@@ -85,14 +88,10 @@
                         class="material-icons"
                         aria-label="Bookmark this page">bookmark</IconButton
                     >
-                    <a href="https://visvar.github.io" target="_blank"
-                        >Our team</a
-                    >
                 </Section>
             </Row>
         </TopAppBar>
         <div class="flexor-content">
-            <button on:click={updateFilter}>filter</button>
             <main>
                 {#if loading === true}
                     Loading...
