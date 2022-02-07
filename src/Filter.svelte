@@ -1,36 +1,32 @@
 <script>
-    export let data;
+  export let data;
 
-    import Slider from "@smui/slider";
-    import Button from "@smui/button";
-    import Checkbox from "@smui/checkbox";
-    import FormField from "@smui/form-field";
-    import * as d3 from "d3";
+  import IconButton from "@smui/icon-button";
+  import VisibilityToggle from "./VisibilityToggle.svelte";
+  import ItemSelection from "./ItemSelection.svelte";
 
-    const yearRange = d3.extent(data, (d) => d.year);
-    export let minYear = yearRange[0];
-    export let maxYear = yearRange[1];
+  let augmReality = "indifferent";
+  let virtReality = "indifferent";
 
-    const count = (data, accessor, sortBy = "none") => {
-        const result = d3.groups(data, accessor).map(([key, d]) => {
-            return { key, count: d.length };
-        });
-        if (sortBy === "countDesc") {
-            result.sort((a, b) => b.count - a.count);
-        } else if (sortBy === "countInc") {
-            result.sort((a, b) => a.count - b.count);
-        }
-        return result;
-    };
+  let colocated = "indifferent";
+  let distributed = "indifferent";
+  let remote = "indifferent";
 
-    const venues = count(data, (d) => d.conference, "countDesc");
-    let venueOptions = venues.map((d) => {
-        return {
-            name: d.key,
-            disabled: false,
-        };
-    });
-    export let selectedVenues = venueOptions.map((d) => d.name);
+  let realistic = "indifferent";
+  let stylized = "indifferent";
+  let cartoon = "indifferent";
+
+  const lorem = (n) =>
+    Array.from({ length: n })
+      .fill()
+      .map((d, i) => `lorem ${i}`);
+
+  let keywords = lorem(6);
+  let selectedKeywords = [...keywords];
+  let technology = lorem(8);
+  let selectedTechnology = [...technology];
+  let fieldOfStudy = lorem(5);
+  let selectedFieldOfStudy = [...fieldOfStudy];
 </script>
 
 <!--
@@ -46,76 +42,101 @@ It will show up on hover.
   ```
 -->
 <main>
-    <h1>Filter</h1>
+  <h1>Filter</h1>
 
-    <h2>Year: {minYear} - {maxYear}</h2>
-
-    <Slider
-        range
-        bind:start={minYear}
-        bind:end={maxYear}
-        min={yearRange[0]}
-        max={yearRange[1]}
-        step={1}
-        discrete={true}
-        tickMarks={false}
-        input$aria-label="Years"
-    />
-
-    <div>
-        <Button
-            on:click={() => {
-                minYear = yearRange[0];
-                maxYear = yearRange[1];
-            }}
-        >
-            All years
-        </Button>
+  <div class="howto">
+    <div class="howtogrid">
+      <IconButton class="material-icons">visibility</IconButton>
+      <span> <b>Want:</b> Show me! </span>
+      <IconButton class="material-icons">panorama_fish_eye</IconButton>
+      <span> <b>Indifferent:</b> I don't care. </span>
+      <IconButton class="material-icons">visibility_off</IconButton>
+      <span> <b>Hide:</b> I'm not interested. </span>
     </div>
+  </div>
 
-    <h2>
-        Venue: {selectedVenues.length === venues.length
-            ? "all"
-            : selectedVenues.length}
-    </h2>
-
-    <div>
-        {#each venueOptions as option}
-            <FormField>
-                <Checkbox
-                    bind:group={selectedVenues}
-                    value={option.name}
-                    disabled={option.disabled}
-                />
-                <span slot="label"
-                    >{option.name}{option.disabled ? " (disabled)" : ""}</span
-                >
-            </FormField>
-        {/each}
+  <div class="filterSection">
+    <h2>Immersion</h2>
+    <div class="grid">
+      <span> augmented reality </span>
+      <VisibilityToggle bind:value={augmReality} />
+      <span> virtual reality </span>
+      <VisibilityToggle bind:value={virtReality} />
     </div>
+  </div>
 
-    <div style="margin-top: 1em;">
-        <Button
-            on:click={() => {
-                selectedVenues = venueOptions.map((d) => d.name);
-            }}
-        >
-            All venues
-        </Button>
+  <div class="filterSection">
+    <h2>Collaboration Type</h2>
+    <div class="grid">
+      <span> Co-located </span>
+      <VisibilityToggle bind:value={colocated} />
+      <span> Distributed </span>
+      <VisibilityToggle bind:value={distributed} />
+      <span> Remote </span>
+      <VisibilityToggle bind:value={remote} />
     </div>
+  </div>
 
-    <h2>Modality</h2>
-    <div>...</div>
+  <div class="filterSection">
+    <h2>Representation</h2>
+    <div class="grid">
+      <span> Realistic </span>
+      <VisibilityToggle bind:value={realistic} />
+      <span> Stylized </span>
+      <VisibilityToggle bind:value={stylized} />
+      <span> Cartoon </span>
+      <VisibilityToggle bind:value={cartoon} />
+    </div>
+  </div>
 
-    <h2>Participant count</h2>
-    <div>...</div>
+  <div class="filterSection">
+    <h2>Social Interaction</h2>
+  </div>
 
-    <h2>Research field</h2>
-    <div>...</div>
+  <div class="filterSection">
+    <h2>Keywords</h2>
+    <ItemSelection items={keywords} bind:selected={selectedKeywords} />
+  </div>
+
+  <div class="filterSection">
+    <h2>Technology</h2>
+    <ItemSelection items={technology} bind:selected={selectedTechnology} />
+  </div>
+
+  <div class="filterSection">
+    <h2>Field of Study</h2>
+    <ItemSelection items={fieldOfStudy} bind:selected={selectedFieldOfStudy} />
+  </div>
 </main>
 
 <style>
-    main {
-        padding-left: 5px;
-    }
+  main {
+    height: max-content;
+    font-size: 1.1em;
+    margin: 0 5px;
+    padding: 5px 10px;
+    /* border: 2px solid var(--accentColor); */
+    border-radius: 5px;
+  }
+
+  .howto .howtogrid {
+    display: grid;
+    grid-template-columns: max-content auto;
+    align-items: center;
+  }
+
+  .filterSection {
+    margin: 10px 0;
+    padding: 5px;
+    background: var(--accentColor);
+    color: #eee;
+    border-radius: 5px;
+  }
+
+  .filterSection .grid {
+    display: grid;
+    grid-template-columns: auto 150px;
+    align-items: center;
+    gap: 5px;
+  }
 </style>

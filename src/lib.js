@@ -3,8 +3,8 @@
  * @param {string} string string
  * @returns {string} result
  */
-export function firstLetterUpper(string) {
-    return string.slice(0, 1).toUpperCase() + string.slice(1);
+export function firstLetterUpper (string) {
+  return string.slice(0, 1).toUpperCase() + string.slice(1)
 }
 
 /**
@@ -12,6 +12,6 @@ export function firstLetterUpper(string) {
  * @param {string} doi DOI
  * @returns {string} path
  */
-export function getImgSrc(doi) {
-    return `./img/${doi.replace("/", "_")}.png`;
+export function getImgSrc (doi) {
+  return `./img/${doi.replace("/", "-")}.png`
 }

@@ -1,3 +1,7 @@
+:root {
+  --accentColor: #EC5B79;
+}
+
 html, body {
 	position: relative;
 	width: 100%;
@@ -9,6 +13,17 @@ body {
 	margin: 0;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: white;
+}
+
+h1 {
+  font-size: 25px;
+  margin: 5px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 5px;
 }
 
 a {
