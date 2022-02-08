@@ -1,14 +1,10 @@
 <script>
-  export let title;
-  export let year;
-  export let authors;
-  export let doi;
-  export let abstract;
-
-  import { firstLetterUpper, getImgSrc } from "./lib.js";
+  import { getImgSrc } from "./lib.js";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Label } from "@smui/button";
   import { createEventDispatcher } from "svelte";
+
+  export let publication;
 
   const dispatch = createEventDispatcher();
   function closed() {
@@ -20,40 +16,41 @@
     closed();
   }
 
-  const imgSrc = getImgSrc(doi);
-  const doiUrl = `https://doi.org/${doi}`;
-
-  const authorsText = authors
-    .map((d) => d.split(" ").map(firstLetterUpper).join(" "))
-    .join(", ");
+  const imgSrc = getImgSrc(publication.doi);
+  const doiUrl = `https://doi.org/${publication.doi}`;
 </script>
 
 <div class="Details">
   <Dialog
     bind:open
+    fullscreen
     aria-labelledby="default-focus-title"
     aria-describedby="default-focus-content"
   >
-    <Title id="default-focus-title">{title}</Title>
+    <h1>{publication.title}</h1>
     <Content id="default-focus-content">
       <div class="year">
-        {year}
-      </div>
-      <div>
-        <!-- <img src={imgSrc} alt="teaser" /> -->
-      </div>
-      <div class="authors">
-        {authorsText}
+        <b>{publication.year}.</b>
+        {publication.authors.join(", ")}
       </div>
       <div class="doi">
-        <a href={doiUrl} target="_blank">DOI: {doi}</a>
+        <a href={doiUrl} target="_blank">DOI: {publication.doi}</a>
+        <a
+          href={`https://scholar.google.de/scholar?hl=en&q=${encodeURI(
+            publication.title
+          )}`}
+          target="_blank">Google Scholar</a
+        >
       </div>
       <div>
         <img src={imgSrc} alt="Teaser" />
       </div>
       <div class="abstract">
-        {abstract}
+        {publication.abstract}
       </div>
+      <p class="bibtex">
+        {publication.bibTex}
+      </p>
     </Content>
     <Actions>
       <Button defaultAction use={[InitialFocus]} on:click={closed}>
@@ -64,12 +61,24 @@
 </div>
 
 <style>
+  h1 {
+    margin: 10px 20px 5px 20px;
+  }
+
   img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 400px;
     background: black;
   }
 
   .abstract {
     font-style: italic;
+  }
+
+  .bibtex {
+    font-size: 12px;
+    font-family: monospace;
+    max-height: 200px;
+    overflow-y: auto;
   }
 </style>
