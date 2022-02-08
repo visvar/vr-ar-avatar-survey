@@ -9,6 +9,10 @@
   import BubbleChart from "./BubbleChart.svelte";
   import ModalityCorrelation from "./ModalityCorrelation.svelte";
   import Publications from "./Publications.svelte";
+  import LineChart from "./LineChart.svelte";
+  import LineChartAlt from "./LineChartAlt.svelte";
+  import RankChart from "./RankChart.svelte";
+  import * as d3 from "d3";
 
   // Data loading
   let loading = false;
@@ -45,6 +49,10 @@
     }
     return data;
   };
+  loadData();
+
+  let selectLineChartGroupBy = "keywords";
+  let selectLineChartTopN = 10;
 </script>
 
 <div class="flexy">
@@ -76,6 +84,26 @@
           <div class="visualizationContainer">
             <BubbleChart {data} shown={true} />
             <ModalityCorrelation {data} shown={true} />
+            <div>
+              <label>
+                group by
+                <select bind:value={selectLineChartGroupBy}>
+                  <option value="keywords">Keywords</option>
+                  <option value="fieldOfStudy">Field of Study</option>
+                </select>
+              </label>
+              <label>
+                top N
+                <select bind:value={selectLineChartTopN}>
+                  {#each d3.range(3, 11) as n}
+                    <option value={n}>{n}</option>
+                  {/each}
+                </select>
+              </label>
+            </div>
+            <RankChart {data} topN={selectLineChartTopN} />
+            <LineChart {data} topN={3} />
+            <LineChartAlt {data} topN={3} />
           </div>
           <Publications {data} />
         {/if}
