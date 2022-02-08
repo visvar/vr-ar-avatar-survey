@@ -5,6 +5,7 @@
   import VisWrapper from "./VisWrapper.svelte";
 
   export let data;
+  export let width;
   export let shown = true;
 
   const fieldGroups = new Map([
@@ -85,7 +86,8 @@
       })
       .filter((d) => d.count > 1);
 
-    // console.log("rendering bubble chart");
+    const w = Math.min(width, window.innerHeight / 2);
+
     let svg = BubbleChart(fields, {
       // label: (d) => d.key,
       label: (d) => `${d.key.split(" ").join("\n")}\n(${d.count})`,
@@ -93,11 +95,10 @@
       group: (d) => fieldGroups.get(d.key),
       title: (d) => `${d.key}\n(${d.count} times)`,
       link: (d) => null,
-      width: Math.min(window.innerWidth - 330, window.innerHeight - 100),
+      width: w,
       colors: schemeTableau10,
       fillOpacity: 0.5,
     });
-    // console.log("appending bubble chart");
     if (container.children.length > 0) {
       container.removeChild(container.children[0]);
     }

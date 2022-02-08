@@ -14,6 +14,15 @@
   import RankChart from "./RankChart.svelte";
   import * as d3 from "d3";
 
+  let windowWidth;
+
+  $: publicationWidth = Math.max(windowWidth * 0.4, 600);
+  // $: console.log("window w", windowWidth);
+  // $: console.log("pub w", publicationWidth);
+  $: visWidth = Math.max(600, windowWidth - 360 - publicationWidth);
+  // $: visWidth = windowWidth - 360 - publicationWidth;
+  $: console.log("visWidth", visWidth);
+
   // Data loading
   let loading = false;
   let allData = null;
@@ -55,6 +64,8 @@
   let selectLineChartTopN = 10;
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
+
 <div class="flexy">
   <div
     class="top-app-bar-container flexor"
@@ -82,8 +93,8 @@
         {:else if data !== null}
           <Filter {allData} bind:data />
           <div class="visualizationContainer">
-            <BubbleChart {data} shown={true} />
-            <ModalityCorrelation {data} shown={true} />
+            <BubbleChart {data} width={visWidth} shown={true} />
+            <ModalityCorrelation {data} width={visWidth} shown={true} />
             <div>
               <label>
                 group by

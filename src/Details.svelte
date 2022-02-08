@@ -35,6 +35,11 @@
       </div>
       <div class="doi">
         <a href={doiUrl} target="_blank">DOI: {publication.doi}</a>
+        {#each publication.sourcePaper.filter((d) => !d.U.includes("doi.org")) as url}
+          <a href={url.U} title={url.U} target="_blank">
+            <span class="pubLink material-icons"> article </span>
+          </a>
+        {/each}
         <a
           href={`https://scholar.google.de/scholar?hl=en&q=${encodeURI(
             publication.title
@@ -63,6 +68,14 @@
 <style>
   h1 {
     margin: 10px 20px 5px 20px;
+  }
+
+  a {
+    margin: 0 3px;
+  }
+
+  .pubLink {
+    transform: translate(0, 5px);
   }
 
   img {

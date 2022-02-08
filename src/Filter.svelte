@@ -19,22 +19,18 @@
   let stylized = "indifferent";
   let cartoon = "indifferent";
 
-  const sortByCountAndUnique = (array, accessor = (d) => d) => {
-    return unique(
-      d3
-        .groups(array, accessor)
-        .sort((a, b) => b.length - a.length)
-        .map(([key]) => key)
-    );
+  const sortByCount = (array, accessor = (d) => d) => {
+    return d3
+      .groups(array, accessor)
+      .sort((a, b) => b[1].length - a[1].length)
+      .map(([key]) => key);
   };
 
-  let keywords = sortByCountAndUnique(allData.flatMap((d) => d.keywords));
+  let keywords = sortByCount(allData.flatMap((d) => d.keywords));
   let selectedKeywords = [...keywords];
-  let technology = sortByCountAndUnique(allData.flatMap((d) => d.technology));
+  let technology = sortByCount(allData.flatMap((d) => d.technology));
   let selectedTechnology = [...technology];
-  let fieldOfStudy = sortByCountAndUnique(
-    allData.flatMap((d) => d.fieldOfStudy)
-  );
+  let fieldOfStudy = sortByCount(allData.flatMap((d) => d.fieldOfStudy));
   let selectedFieldOfStudy = [...fieldOfStudy];
 
   const filterVisibility = (publication, inputState, checker) => {
