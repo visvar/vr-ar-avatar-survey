@@ -5,6 +5,10 @@
   import Filter from "./Filter.svelte";
   import BubbleChart from "./BubbleChart.svelte";
   import Publications from "./Publications.svelte";
+  import LineChart from "./LineChart.svelte";
+  import LineChartAlt from "./LineChartAlt.svelte";
+  import RankChart from "./RankChart.svelte";
+  import * as d3 from "d3"
 
   // View
   let views = ["Tiles", "Bubble", "PCP"];
@@ -48,6 +52,9 @@
     }
   };
   loadData();
+
+  let selectLineChartGroupBy = "keywords";
+  let selectLineChartTopN = 10;
 </script>
 
 <div class="flexy">
@@ -81,7 +88,32 @@
             bind:maxYear
             bind:selectedVenues={venues}
           />
-          <BubbleChart {data} />
+          <div class="flexor">
+            <BubbleChart {data} />
+            <div>
+              <div class="flexy" style="gap: 1em;">
+                <div style="flex-grow: 1"/>
+                <label>
+                  group by
+                  <select bind:value={selectLineChartGroupBy}>
+                    <option value="keywords">Keywords</option>
+                    <option value="fieldOfStudy">Field of Study</option>
+                  </select>
+                </label>
+                <label>
+                  top N
+                  <select bind:value={selectLineChartTopN}>
+                    {#each d3.range(3, 11) as n}
+                      <option value={n}>{n}</option>
+                    {/each}
+                  </select>
+                </label>
+              </div>
+              <RankChart {data}  topN={selectLineChartTopN} />
+              <LineChart {data}  topN={3} />
+              <LineChartAlt {data}  topN={3} />
+            </div>
+          </div>
           <Publications {data} />
         {/if}
       </main>
