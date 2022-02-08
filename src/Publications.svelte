@@ -55,6 +55,9 @@
           {publication.title}
         </h2>
         <p>
+          {publication.authors}
+        </p>
+        <p>
           {publication.year}, {publication.conference}, cited {publication.citationCount}
           times
         </p>
