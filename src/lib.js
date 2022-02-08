@@ -15,3 +15,5 @@ export function firstLetterUpper (string) {
 export function getImgSrc (doi) {
   return `./img/${doi.replace("/", "-")}.png`
 }
+
+export function unique (array) { return Array.from(new Set(array)) }

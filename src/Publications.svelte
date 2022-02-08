@@ -35,6 +35,7 @@
 
 <main>
   <div class="sortingOptions">
+    <span>{data.length} publications</span>
     <Select bind:value={sortBy} label="Sort by">
       {#each sortingOptions as option}
         <Option value={option}>
@@ -55,64 +56,73 @@
           {publication.title}
         </h2>
         <p>
-          {publication.authors}
+          <b>{publication.year}</b>
+          <i>{publication.conference}</i><br />
+          {publication.authors[0]} et al.
+          <span class="citations">
+            {publication.citationCount}
+            <span class="material-icons"> format_quote </span>
+          </span>
         </p>
-        <p>
-          {publication.year}, {publication.conference}, cited {publication.citationCount}
-          times
-        </p>
-        <p class="abstract">
+        <!-- <p class="abstract">
           {publication.abstract}
-        </p>
+        </p> -->
       </div>
     </div>
   {/each}
   {#if selected !== null}
-    <Details
-      title={selected.title}
-      year={selected.year}
-      authors={selected.authors}
-      doi={selected.doi}
-      abstract={selected.abstract}
-      on:closed={() => (selected = null)}
-    />
+    <Details publication={selected} on:closed={() => (selected = null)} />
   {/if}
 </main>
 
 <style>
   main {
+    margin-left: 15px;
     display: grid;
     grid-template-columns: auto;
-    gap: 20px;
+    grid-auto-rows: min-content;
+    gap: 15px;
     padding: 5px;
   }
 
   .sortingOptions {
     display: grid;
+    grid-template-columns: auto auto;
     justify-items: center;
     align-items: center;
-    margin-bottom: 15px;
-    padding: 5px;
-    /* border: 2px solid var(--accentColor); */
+    margin-bottom: 10px;
     border-radius: 5px;
+    font-size: large;
   }
 
   .publication {
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 190px auto;
     gap: 10px;
     cursor: pointer;
   }
 
   .publication img {
-    width: 200px;
+    margin: 0 auto;
+    max-width: 180px;
+    max-height: 180px;
     box-shadow: 0 0 7px #aaa;
     border-radius: 2px;
   }
 
-  .publication .abstract {
+  .citations {
+    padding: 1px 2px 1px 4px;
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .citations span {
+    transform: translate(0, 6px);
+    color: #666;
+  }
+
+  /* .publication .abstract {
     width: 100%;
-    /* max-height: 4em; */
     display: -moz-box;
     display: -webkit-box;
     line-clamp: 3;
@@ -123,11 +133,15 @@
     -webkit-box-orient: vertical;
     font-style: italic;
     overflow: hidden;
-  }
+  } */
 
   h2 {
     margin: 0;
     text-shadow: 0 0 5px white;
     user-select: none;
+  }
+
+  p {
+    margin: 8px 0;
   }
 </style>

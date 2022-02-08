@@ -1,9 +1,12 @@
 <script>
+  export let allData;
   export let data;
 
+  import * as d3 from "d3";
   import IconButton from "@smui/icon-button";
   import VisibilityToggle from "./VisibilityToggle.svelte";
   import ItemSelection from "./ItemSelection.svelte";
+  import { unique } from "./lib.js";
 
   let augmReality = "indifferent";
   let virtReality = "indifferent";
@@ -16,17 +19,92 @@
   let stylized = "indifferent";
   let cartoon = "indifferent";
 
-  const lorem = (n) =>
-    Array.from({ length: n })
-      .fill()
-      .map((d, i) => `lorem ${i}`);
+  const sortByCountAndUnique = (array, accessor = (d) => d) => {
+    return unique(
+      d3
+        .groups(array, accessor)
+        .sort((a, b) => b.length - a.length)
+        .map(([key]) => key)
+    );
+  };
 
-  let keywords = lorem(6);
+  let keywords = sortByCountAndUnique(allData.flatMap((d) => d.keywords));
   let selectedKeywords = [...keywords];
-  let technology = lorem(8);
+  let technology = sortByCountAndUnique(allData.flatMap((d) => d.technology));
   let selectedTechnology = [...technology];
-  let fieldOfStudy = lorem(5);
+  let fieldOfStudy = sortByCountAndUnique(
+    allData.flatMap((d) => d.fieldOfStudy)
+  );
   let selectedFieldOfStudy = [...fieldOfStudy];
+
+  const filterVisibility = (publication, inputState, checker) => {
+    if (inputState === "indifferent") {
+      return true;
+    } else if (inputState === "show") {
+      return checker(publication);
+    } else if (inputState === "hide") {
+      return !checker(publication);
+    }
+  };
+
+  /**
+   * Updates the data globally depending on current input values
+   */
+  const filter = () => {
+    data = allData.filter((publication) => {
+      // Filter visibility
+      if (
+        !filterVisibility(publication, augmReality, (d) =>
+          d.type.includes("ar")
+        )
+      ) {
+        return false;
+      }
+      if (
+        !filterVisibility(publication, virtReality, (d) =>
+          d.type.includes("vr")
+        )
+      ) {
+        return false;
+      }
+      // Has at least one selected keyword
+      if (d3.intersection(publication.keywords, selectedKeywords).size === 0) {
+        return false;
+      }
+      // Has at least one selected technology
+      if (
+        d3.intersection(publication.technology, selectedTechnology).size === 0
+      ) {
+        return false;
+      }
+      // Has at least one selected field of study
+      if (
+        d3.intersection(publication.fieldOfStudy, selectedFieldOfStudy).size ===
+        0
+      ) {
+        return false;
+      }
+      return true;
+    });
+    console.log("filtered", data);
+  };
+
+  // afterUpdate(filter);
+  $: if (
+    augmReality ||
+    virtReality ||
+    colocated ||
+    distributed ||
+    remote ||
+    realistic ||
+    stylized ||
+    cartoon ||
+    selectedKeywords ||
+    selectedTechnology ||
+    selectedFieldOfStudy
+  ) {
+    filter();
+  }
 </script>
 
 <!--
@@ -94,18 +172,30 @@ It will show up on hover.
   </div>
 
   <div class="filterSection">
-    <h2>Keywords</h2>
-    <ItemSelection items={keywords} bind:selected={selectedKeywords} />
+    <ItemSelection
+      heading="Keywords"
+      collapsed
+      items={keywords}
+      bind:selected={selectedKeywords}
+    />
   </div>
 
   <div class="filterSection">
-    <h2>Technology</h2>
-    <ItemSelection items={technology} bind:selected={selectedTechnology} />
+    <ItemSelection
+      heading="Technology"
+      collapsed
+      items={technology}
+      bind:selected={selectedTechnology}
+    />
   </div>
 
   <div class="filterSection">
-    <h2>Field of Study</h2>
-    <ItemSelection items={fieldOfStudy} bind:selected={selectedFieldOfStudy} />
+    <ItemSelection
+      heading="Field of Study"
+      collapsed
+      items={fieldOfStudy}
+      bind:selected={selectedFieldOfStudy}
+    />
   </div>
 </main>
 
@@ -113,15 +203,14 @@ It will show up on hover.
   main {
     height: max-content;
     font-size: 1.1em;
-    margin: 0 5px;
     padding: 5px 10px;
-    /* border: 2px solid var(--accentColor); */
     border-radius: 5px;
   }
 
   .howto .howtogrid {
     display: grid;
     grid-template-columns: max-content auto;
+    grid-template-rows: repeat(3, 30px);
     align-items: center;
   }
 

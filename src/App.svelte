@@ -1,36 +1,14 @@
 <script>
   import "svelte-material-ui/bare.css";
+  import "inter-ui/inter.css";
+  import { onMount } from "svelte";
   import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
   import IconButton from "@smui/icon-button";
+  import { firstLetterUpper } from "./lib.js";
   import Filter from "./Filter.svelte";
   import BubbleChart from "./BubbleChart.svelte";
+  import ModalityCorrelation from "./ModalityCorrelation.svelte";
   import Publications from "./Publications.svelte";
-
-  // View
-  let views = ["Tiles", "Bubble", "PCP"];
-  let currentView = "Tiles";
-
-  // Filter
-  let minYear;
-  let maxYear;
-  let venues;
-  let modalities;
-  const updateFilter = () => {
-    if (!allData) {
-      return;
-    }
-    const venueSet = new Set(venues);
-    data = allData.filter((d) => {
-      return (
-        d.year >= minYear && d.year <= maxYear && venueSet.has(d.conference)
-      );
-    });
-    console.log(data);
-  };
-  // Update data when filter variables change
-  $: if (minYear || maxYear || venues || modalities) {
-    updateFilter();
-  }
 
   // Data loading
   let loading = false;
@@ -40,6 +18,7 @@
     loading = true;
     const response = await fetch("./data.json");
     data = await response.json();
+    data = preprocess(data);
     allData = data;
     if (response.ok) {
       loading = false;
@@ -47,7 +26,25 @@
       throw new Error(text);
     }
   };
-  loadData();
+  onMount(loadData);
+
+  /**
+   * Preprocesses data to make it more beatufil or uniform, should be done on
+   * the JSOn file in the future to only have to do it once.
+   *
+   * @param data
+   */
+  const preprocess = (data) => {
+    for (const publication of data) {
+      publication.authors = publication.authors.map((d) =>
+        d.split(" ").map(firstLetterUpper).join(" ")
+      );
+      publication.technology = publication.technology.map((d) =>
+        d.toLowerCase()
+      );
+    }
+    return data;
+  };
 </script>
 
 <div class="flexy">
@@ -75,13 +72,11 @@
         {#if loading === true}
           Loading...
         {:else if data !== null}
-          <Filter
-            {data}
-            bind:minYear
-            bind:maxYear
-            bind:selectedVenues={venues}
-          />
-          <BubbleChart {data} />
+          <Filter {allData} bind:data />
+          <div class="visualizationContainer">
+            <BubbleChart {data} shown={true} />
+            <ModalityCorrelation {data} shown={true} />
+          </div>
           <Publications {data} />
         {/if}
       </main>
@@ -124,6 +119,6 @@
 
   main {
     display: grid;
-    grid-template-columns: 360px auto 600px;
+    grid-template-columns: 360px auto minmax(600px, 40%);
   }
 </style>
