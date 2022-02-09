@@ -12,6 +12,7 @@
   import LineChart from "./LineChart.svelte";
   import LineChartAlt from "./LineChartAlt.svelte";
   import RankChart from "./RankChart.svelte";
+  import BarChart from "./BarChart.svelte";
   import * as d3 from "d3";
 
   let windowWidth;
@@ -93,6 +94,9 @@
         {:else if data !== null}
           <Filter {allData} bind:data />
           <div class="visualizationContainer">
+            <BarChart {data} groupBy="authors" width={visWidth} shown={true} />
+            <BarChart {data} groupBy="keywords" width={visWidth} shown={true} />
+            <BarChart {data} groupBy="fieldOfStudy" width={visWidth} shown={true} />
             <BubbleChart {data} width={visWidth} shown={true} />
             <ModalityCorrelation {data} width={visWidth} shown={true} />
             <RankChart {data} width={visWidth} shown={true} />
