@@ -1,11 +1,14 @@
 <script>
     import * as d3 from "d3";
+    import VisWrapper from "./VisWrapper.svelte";
+
+    export let data;
+    export let shown;
 
     /** @type {"keywords"|"fieldOfStudy"} */
-    export let groupBy = "fieldOfStudy";
-    export let data;
+    let groupBy = "fieldOfStudy";
     /** @type {Number} */
-    export let topN = 10;
+    let topN = 3;
 
     /**
      * extracts topN values definded by groupBy of data.
@@ -80,28 +83,62 @@
     }
 </script>
 
-<svg {width} {height}>
-    {#each groupedData as values, j}
-        <path d={line(values)} fill="none" stroke={colorScale(values.value)} />
-        {#each values as [year, rank, number]}
-            {#if rank}
-                <circle cx={x(year)} cy={y(number)} r=4 fill={colorScale(values.value)} />
-            {/if}
-        {/each}
-    {/each}
-    <g transform="translate(0, {height - margin})" use:axis={{ axis: d3.axisBottom, scale: x }} />
-    <g transform="translate({margin}, 0)" use:axis={{ axis: d3.axisLeft, scale: y }} />
-</svg>
+<main>
+    <VisWrapper title="Line Chart" {shown}>
+        <div class="toolbar">
+            <div class="separator" />
+            <label>
+                group by
+                <select bind:value={groupBy}>
+                    <option value="keywords">Keywords</option>
+                    <option value="fieldOfStudy">Field of Study</option>
+                </select>
+            </label>
+            <label>
+                top N
+                <select bind:value={topN}>
+                    {#each d3.range(3, 11) as n}
+                        <option value={n}>{n}</option>
+                    {/each}
+                </select>
+            </label>
+        </div>
+        <svg {width} {height}>
+            {#each groupedData as values, j}
+                <path d={line(values)} fill="none" stroke={colorScale(values.value)} />
+                {#each values as [year, rank, number]}
+                    {#if rank}
+                        <circle cx={x(year)} cy={y(number)} r="4" fill={colorScale(values.value)} />
+                    {/if}
+                {/each}
+            {/each}
+            <g transform="translate(0, {height - margin})" use:axis={{ axis: d3.axisBottom, scale: x }} />
+            <g transform="translate({margin}, 0)" use:axis={{ axis: d3.axisLeft, scale: y }} />
+        </svg>
 
-<div id="legend">
-    {#each colorScale.domain() as value}
-        <div><span style="color: {colorScale(value)}">●</span> {value}</div>
-    {/each}
-</div>
+        <div id="legend">
+            {#each colorScale.domain() as value}
+                <div><span style="color: {colorScale(value)}">●</span> {value}</div>
+            {/each}
+        </div>
+    </VisWrapper>
+</main>
 
 <style>
+    .separator {
+        flex-grow: 1;
+    }
+
+    .toolbar {
+        display: flex;
+        gap: 1em;
+        padding: 1em;
+    }
+
     #legend {
+        padding: 1em;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5em;
     }
 </style>

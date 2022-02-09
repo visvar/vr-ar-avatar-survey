@@ -95,26 +95,9 @@
           <div class="visualizationContainer">
             <BubbleChart {data} width={visWidth} shown={true} />
             <ModalityCorrelation {data} width={visWidth} shown={true} />
-            <div>
-              <label>
-                group by
-                <select bind:value={selectLineChartGroupBy}>
-                  <option value="keywords">Keywords</option>
-                  <option value="fieldOfStudy">Field of Study</option>
-                </select>
-              </label>
-              <label>
-                top N
-                <select bind:value={selectLineChartTopN}>
-                  {#each d3.range(3, 11) as n}
-                    <option value={n}>{n}</option>
-                  {/each}
-                </select>
-              </label>
-            </div>
-            <RankChart {data} topN={selectLineChartTopN} />
-            <LineChart {data} topN={3} />
-            <LineChartAlt {data} topN={3} />
+            <RankChart {data} width={visWidth} shown={true} />
+            <LineChart {data} width={visWidth} shown={true}  />
+            <LineChartAlt {data} width={visWidth} shown={true} />
           </div>
           <Publications {data} />
         {/if}

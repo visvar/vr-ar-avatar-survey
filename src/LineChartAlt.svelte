@@ -1,11 +1,14 @@
 <script>
     import * as d3 from "d3";
+    import VisWrapper from "./VisWrapper.svelte";
+
+    export let data;
+    export let shown;
 
     /** @type {"keywords"|"fieldOfStudy"} */
-    export let groupBy = "fieldOfStudy";
-    export let data;
+    let groupBy = "fieldOfStudy";
     /** @type {Number} */
-    export let topN = 10;
+    let topN = 3;
 
     /**
      * extracts topN values definded by groupBy of data.
@@ -49,7 +52,7 @@
 
     $: width = 200;
     $: height = 80;
-    const margin = {top: 10, bottom: 25, left: 25, right: 1};
+    const margin = { top: 10, bottom: 25, left: 25, right: 1 };
 
     $: y = d3
         .scaleLinear()
@@ -80,40 +83,69 @@
     }
 </script>
 
-
-<div id="legend">
-    {#each groupedData as row, i}
-        <div class="cell">
-            
-            <div>{row.value}</div>
-            <svg {width} {height} viewbox="0 0 {width} {height}">
-                {#each groupedData as row, j}
-                    {#if i != j}
-                    <g>
-                        <path d={line(row)} fill="none" stroke="#ddd" />
-                        {#each row as [year, rank, number]}
-                            {#if number}
-                                <circle cx={x(year)} cy={y(number)} r=1.5 fill="#ddd" />
+<main>
+    <VisWrapper title="Line Chart" {shown}>
+        <div class="toolbar">
+            <div class="separator" />
+            <label>
+                group by
+                <select bind:value={groupBy}>
+                    <option value="keywords">Keywords</option>
+                    <option value="fieldOfStudy">Field of Study</option>
+                </select>
+            </label>
+            <label>
+                top N
+                <select bind:value={topN}>
+                    {#each d3.range(3, 11) as n}
+                        <option value={n}>{n}</option>
+                    {/each}
+                </select>
+            </label>
+        </div>
+        <div id="legend">
+            {#each groupedData as row, i}
+                <div class="cell">
+                    <div>{row.value}</div>
+                    <svg {width} {height} viewbox="0 0 {width} {height}">
+                        {#each groupedData as row, j}
+                            {#if i != j}
+                                <g>
+                                    <path d={line(row)} fill="none" stroke="#ddd" />
+                                    {#each row as [year, rank, number]}
+                                        {#if number}
+                                            <circle cx={x(year)} cy={y(number)} r="1.5" fill="#ddd" />
+                                        {/if}
+                                    {/each}
+                                </g>
                             {/if}
                         {/each}
-                    </g>
-                    {/if}
-                {/each}
-                <path d={line(row)} fill="none" stroke={colorScale(row.value)} />
-                {#each row as [year, rank, number]}
-                    {#if number}
-                        <circle cx={x(year)} cy={y(number)} r=2.5 fill={colorScale(row.value)} />
-                    {/if}
-                {/each}
-                <g transform="translate(0, {height - margin.bottom})" use:axis={{ axis: d3.axisBottom, scale: x, ticks: 2 }} />
-                <g transform="translate({margin.left}, 0)" use:axis={{ axis: d3.axisLeft, scale: y, ticks: 1 }} />
-            </svg>
-        
+                        <path d={line(row)} fill="none" stroke={colorScale(row.value)} />
+                        {#each row as [year, rank, number]}
+                            {#if number}
+                                <circle cx={x(year)} cy={y(number)} r="2.5" fill={colorScale(row.value)} />
+                            {/if}
+                        {/each}
+                        <g transform="translate(0, {height - margin.bottom})" use:axis={{ axis: d3.axisBottom, scale: x, ticks: 2 }} />
+                        <g transform="translate({margin.left}, 0)" use:axis={{ axis: d3.axisLeft, scale: y, ticks: 1 }} />
+                    </svg>
+                </div>
+            {/each}
         </div>
-    {/each}
-</div>
+    </VisWrapper>
+</main>
 
 <style>
+    .separator {
+        flex-grow: 1;
+    }
+
+    .toolbar {
+        display: flex;
+        gap: 1em;
+        padding: 1em;
+    }
+
     #legend {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -122,6 +154,7 @@
     .cell {
         display: flex;
         flex-direction: column;
+        padding: 0.5em;
     }
 
     .cell > div {
