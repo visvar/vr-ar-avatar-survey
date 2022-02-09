@@ -145,16 +145,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "virtual reality",
-            "avatar",
-            "immersion",
-            "illusion",
-            "software",
-            "multimedia",
-            "entertainment",
-            "computer science",
-            "face",
-            "tracking"
+            "Avatars", "Software", "Face", "Tracking", "Real-time systems", "Prototypes", "Object Tracking", "Real-time systems", "Real-time Markerless Body Tracking", "Real-time Markerless Face Tracking", "Avatar Embodiment", "Virtual reality", "VR", "FaceBo"
         ]
     },
     {
@@ -317,18 +308,7 @@
         "noParticipants": 36.0,
         "studyCharacteristics": "designed an experiment to investigate the effects of reduced social information and behavioral channels in VR compared to the real world in the context of two common social interactions: a physical task - a ball game and a verbal task - a negotiation role play",
         "keywords": [
-            "social cue",
-            "social relation",
-            "virtual reality",
-            "electronic mail",
-            "avatar",
-            "immersion",
-            "gaze",
-            "facial expression",
-            "human computer interaction",
-            "task",
-            "computer science",
-            "realism"
+            "Avatars", "Virtual environments", "Electronic mail", "Collaboration", "Games", "Atmospheric measurements", "Behavioural Sciences Computing", "social sciences computing", "behavioral cues", "social cues", "verbal task", "presence", "physical performance", "VR", "Virtual reality", "RW", "real world", "verbal-based social interactions", "physical-based social interactions", "full-body avatar embodiment", "Immersive virtual environment", "behavioral channels", "reduced social information", "social interaction quality", "avatar realism"
         ]
     },
     {
@@ -506,17 +486,7 @@
         "noParticipants": 36.0,
         "studyCharacteristics": "three conditions: no avatar, arm only, full-body",
         "keywords": [
-            "throwing",
-            "prism adaptation",
-            "context",
-            "prism",
-            "virtual reality",
-            "avatar",
-            "visual field",
-            "immersion",
-            "computer vision",
-            "computer science",
-            "artificial intelligence"
+            "Avatars", "Visualization", "Calibration", "Legged locomotion", "Tracking", "Virtual environments", "Head", "optical prisms", "Immersive virtual environment", "first-person self-avatars", "visual feedback", "user online actions", "immersive VE", "self-avatar arm", "self-avatar full-body", "action calibration", "clockwise rotated visual field", "vertical axis", "normal viewing environment", "prism distortion", "first-person full-body avatar", "between-subject manipulation", "prism-exposure", "visual frame-of-reference"
         ]
     },
     {
@@ -671,15 +641,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "virtual reality",
-            "immersion",
-            "avatar",
-            "human behavior",
-            "facial expression",
-            "computer graphics images",
-            "motion",
-            "computer science",
-            "transmission"
+            "Tracking", "Avatars", "Virtual environments", "Stereo image processing", "Three-dimensional displays", "Sensors", "socially immersive avatar-based communication", "SIAM-C", "real-life social interactions", "Virtual reality", "life-size projection plane"
         ]
     },
     {
@@ -871,16 +833,7 @@
         "noParticipants": 20.0,
         "studyCharacteristics": "presence; ownership; agency; within-subject design",
         "keywords": [
-            "virtual machine",
-            "virtual reality",
-            "electronic mail",
-            "task analysis",
-            "human computer interaction",
-            "task",
-            "embodied cognition",
-            "visualization",
-            "computer science",
-            "user engagement"
+            "Avatars", "Task analysis", "Virtual environments", "Visualization", "Electronic mail", "Games", "computer games", "Human computer interaction", "human factors", "VR shared experiences",  "Virtual environments", "anthropomorphic virtual representation", "virtual version", "virtual table", "Virtual body", "user engagement", "virtual reality applications" 
         ]
     },
     {
@@ -1016,16 +969,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "embodied cognition",
-            "avatar",
-            "perception",
-            "representation",
-            "cognitive psychology",
-            "virtual reality",
-            "entertainment",
-            "computer science",
-            "stereotypy",
-            "racial bias"
+            "Avatars", "Atmospheric measurements", "Particle measurements", "Clothing", "Task analysis", "Training", "computer based training", "entertainment", "serious games (computing)", "embodied avatars", "stereotypical influences", "implicit racial bias", "stereotypical environment", "stereotypical triggers", "avatar representation", "learning", "game-like environment", "virtual reality entertainment", "training simulations"
         ]
     },
     {
@@ -1199,15 +1143,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "virtual reality",
-            "virtual training",
-            "match moving",
-            "optical head mounted display",
-            "gesture",
-            "avatar",
-            "inverse kinematics",
-            "human computer interaction",
-            "computer science"
+            "Avatars", "Collaboration", "Tracking", "Kinematics", "Three-dimensional displays", "CAD", "calibration", "groupware", "production engineering computing", "Virtual reality", "distributed engineering tasks", "virtual training", "motion tracking", "VR devices", "avatar motion reconstruction", "collaborative CAD review", "collaborative virtual reality application", "product development", "avatar calibration method", "Human-centered computing", "Human computer interaction", "Interaction paradigms"
         ]
     },
     {
@@ -1353,15 +1289,8 @@
         "noParticipants": 22.0,
         "studyCharacteristics": null,
         "keywords": [
-            "sense of agency",
-            "motion",
-            "avatar",
-            "action",
-            "task",
-            "social psychology",
-            "virtual reality",
-            "computer science",
-            "body ownership"
+            "Avatars", "Task analysis", "Virtual environments", "Head", "Collaboration", "Robots", "Rubber", "action integration", "Body ownership", "shared body condition", "single body condition", "avatar motion", "Sense of agency", "Body ownership", "Embodiment", "Collaboration", "augmented human"
+
         ]
     },
     {
@@ -1505,13 +1434,7 @@
         "noParticipants": 40.0,
         "studyCharacteristics": null,
         "keywords": [
-            "user experience design",
-            "virtual reality",
-            "avatar",
-            "human computer interaction",
-            "immersion",
-            "optical head mounted display",
-            "computer science"
+            "Avatars", "Task analysis", "Collaboration", "Virtual environments", "User experience", "Visualization", "Human computer interaction", "HMO-based virtual environments", "multiuser virtual reality", "social activity", "large-scale location-based experiences", "realtime-tracked avatar", "colocated business-oriented applications", "guide-user-scenario", "user-related factors", "avatar-guide", "spatial presence", "user experience", "task load", "social presence", "Virtual reality", "Co-located Collaborations", "Head-mounted Display", "Social Presence"
         ]
     },
     {
@@ -1711,16 +1634,7 @@
         "noParticipants": 24,
         "studyCharacteristics": "not about avatars",
         "keywords": [
-            "augmented reality",
-            "virtual reality",
-            "user interface",
-            "usability",
-            "focus",
-            "human computer interaction",
-            "3d reconstruction",
-            "avatar",
-            "computer science",
-            "scale"
+            "Manifolds", "Three-dimensional displays", "Telepresence", "Annotations", "Transforms", "User interfaces", "Real-time systems", "Augmented reality", "Avatars", "image annotation", "image colour analysis", "image reconstruction", "stereo image processing", "telemedicine", "user interfaces", "Magnorama", "hand-drawn annotations", "Virtual reality", "virtual annotations", "virtual objects", "teleconsultation-supported craniectomy procedure", "remote expert", "local user", "RGB-D sensors", "3D reconstruction", "Interaction Techniques", "Medical Information System"
         ]
     },
     {
@@ -1878,17 +1792,7 @@
         "noParticipants": "-",
         "studyCharacteristics": "doability",
         "keywords": [
-            "mixed reality",
-            "augmented reality",
-            "virtual reality",
-            "systems architecture",
-            "gesture",
-            "human computer interaction",
-            "avatar",
-            "eye tracking",
-            "multimedia",
-            "gaze",
-            "computer science"
+            "Collaboration", "Augmented reality", "Calibration", "Image reconstruction", "Three-dimensional displays", "Tracking", "Avatars", "calibration", "groupware", "shared collaboration", "VR", "remote collaboration", "mixed platform collaboration", "remote embodiment", "awareness cues", "gaze cue", "collaboration enhancement features", "CoVAR", "mixed-platform remote collaborative augmented reality system", "mixed-platform remote collaborative virtual reality system", "AR user environment", "3D reconstruction", "Mixed reality", "eye tracking"
         ]
     },
     {
@@ -2046,16 +1950,7 @@
         "noParticipants": 148.0,
         "studyCharacteristics": "dwell time",
         "keywords": [
-            "gaze",
-            "perception",
-            "augmented reality",
-            "avatar",
-            "interpersonal attraction",
-            "virtual reality",
-            "naturalness",
-            "cognitive psychology",
-            "animation",
-            "computer science"
+            "Data models", "Avatars", "Analytical models", "Computational modeling", "Human computer interaction", "Animation", "Artificial intelligence", "Augmented reality", "human factors", "human-robot interaction", "synthetic social gaze", "avatar-mediated interactions", "human gaze", "social interactions", "natural gaze transmission", "social gaze model", "random gaze transmission", "dyadic interactions", "social adequateness", "transmission mode", "gaze synthesis", "gaze behavior", "hybrid gaze", "social augmented reality", "Virtual reality", "virtual rapport perception", "trust perception", "interpersonal attraction perception", "Human-centered computing", "Visualization", "Visualization techniques"
         ]
     },
     {
@@ -2183,12 +2078,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "virtual reality",
-            "facial expression",
-            "avatar",
-            "laptop",
-            "human computer interaction",
-            "computer science"
+            "Human-centered computing", "Human computer interaction", "Interaction paradigms", "Collaborative interaction", "Virtual reality", "Software and its engineering", "Software organization and properties", "Contextual software domains", "Virtual worlds software", "Interactive games", "Emotion sharing", "emotion augmentation", "facial expression", "Virtual reality", "computer games"
         ]
     },
     {
@@ -2396,16 +2286,7 @@
         "noParticipants": 123.0,
         "studyCharacteristics": null,
         "keywords": [
-            "sense of agency",
-            "body awareness",
-            "virtual representation",
-            "big five personality traits",
-            "personality",
-            "virtual machine",
-            "virtual reality",
-            "augmented reality",
-            "cognitive psychology",
-            "computer science"
+            "Avatars", "Virtual environments", "Task analysis", "Visualization", "Atmospheric measurements", "Particle measurements", "helmet mounted displays", "Virtual reality", "virtual representation", "Embodiment", "internal factors", "personality traits", "body awareness", "gender-matched generic virtual avatar", "virtual character", "virtual scene", "Virtual body", "Body ownership", "Embodiment", "Personality", "Body Awareness"
         ]
     },
     {
@@ -2561,16 +2442,8 @@
         "noParticipants": 16.0,
         "studyCharacteristics": null,
         "keywords": [
-            "mixed reality",
-            "augmented reality",
-            "virtual reality",
-            "gesture",
-            "avatar",
-            "gaze",
-            "human computer interaction",
-            "orientation",
-            "urban planning",
-            "computer science"
+            "Information systems", "Information systems applications", "Multimedia information systems",
+            "Mixed reality", "remote collaboration", "Augmented reality", "Virtual reality", "remote embodiment", "Avatars", "redirected", "gaze", "gesture", "awareness"
         ]
     },
     {
@@ -2735,16 +2608,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "virtual reality",
-            "conversation",
-            "nonverbal communication",
-            "embodied cognition",
-            "computer mediated communication",
-            "avatar",
-            "human computer interaction",
-            "floor plan",
-            "workspace",
-            "psychology"
+            "Information systems", "World Wide Web", "Web applications", "Internet communications tools", "Computer-mediated communication", "Virtual reality", "Embodiment", "social presence"
         ]
     },
     {
@@ -2927,16 +2791,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "virtual reality",
-            "telehealth",
-            "workload",
-            "medical education",
-            "avatar",
-            "plan",
-            "psychology",
-            "medical staff",
-            "upper body",
-            "user studies"
+            "Human-centered computing", "Human computer interaction", "HCI design and evaluation methods", "User studies", "Interaction paradigms", "Virtual reality", "Virtual reality", "social VR", "VR consultation", "telehealth", "user studies"
         ]
     },
     {
@@ -3102,14 +2957,7 @@
         "noParticipants": 16.0,
         "studyCharacteristics": null,
         "keywords": [
-            "avatar",
-            "quality",
-            "virtual reality",
-            "task",
-            "group cohesiveness",
-            "applied psychology",
-            "psychology",
-            "work"
+            "Computing methodologies", "Computer graphics", "Graphics systems and interfaces", "Virtual reality", "Social VR", "Collaboration", "Gender", "Communication", "Avatar’s Gender"
         ]
     },
     {
@@ -3319,17 +3167,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "collaborative virtual environment",
-            "virtual reality",
-            "avatar",
-            "embodied cognition",
-            "situated",
-            "anonymity",
-            "task",
-            "human computer interaction",
-            "visitor pattern",
-            "multimedia",
-            "computer science"
+            "Design", "Experimentation", "Human Factors", "Collaborative Virtual Environment", "Social touch", "Haptic interaction", "Presence", "Embodiment"
         ]
     },
     {
@@ -3448,16 +3286,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "immersive technology",
-            "mediated communication",
-            "virtual reality",
-            "immersion",
-            "avatar",
-            "facial expression",
-            "human computer interaction",
-            "computer mediated communication",
-            "multimedia",
-            "computer science"
+            "Social Virtual Reality", "Avatars", "Computer-mediated communication"
         ]
     },
     {
@@ -3649,17 +3478,7 @@
         "noParticipants": 38.0,
         "studyCharacteristics": "19 groups of 2 persons",
         "keywords": [
-            "kernel virtual address space",
-            "collaborative virtual environment",
-            "instructional simulation",
-            "virtual machine",
-            "workspace",
-            "virtual reality",
-            "context",
-            "human computer interaction",
-            "grid",
-            "multimedia",
-            "computer science"
+            "Virtual reality", "Collaborative Virtual Environment", "Virtual reality", "Collaborative interaction", "User studies"
         ]
     },
     {
@@ -3844,16 +3663,7 @@
         "noParticipants": 21.0,
         "studyCharacteristics": "2 x (self-avatar) x 2 (other-avatar) within-subjects design",
         "keywords": [
-            "virtual reality",
-            "avatar",
-            "uncanny valley",
-            "optical head mounted display",
-            "social relation",
-            "multimedia",
-            "realism",
-            "computer science",
-            "virtual interaction",
-            "virtual space"
+            "Social Interaction", "Avatars", "Lifelike", "Virtual reality", "Virtual reality", "Collaborative and social computing devices", "Computing methodologies", "Virtual reality", "Computational photography", "Mesh geometry models"
         ]
     },
     {
@@ -4029,16 +3839,7 @@
         "noParticipants": 17.0,
         "studyCharacteristics": "over Skype",
         "keywords": [
-            "virtual reality",
-            "social group",
-            "avatar",
-            "human computer interaction",
-            "dynamics",
-            "longitudinal study",
-            "computer science",
-            "group interaction",
-            "transferability",
-            "virtual world"
+            "Virtual reality", "social VR", "avatar representation", "affective states", "in-the-wild study", "Computer supported cooperative work"
         ]
     },
     {
@@ -4232,16 +4033,7 @@
         "noParticipants": 25.0,
         "studyCharacteristics": "two sessions, being an interviewee and being interviewed",
         "keywords": [
-            "virtual reality",
-            "gesture",
-            "user experience design",
-            "motion capture",
-            "avatar",
-            "usability",
-            "fidelity",
-            "human computer interaction",
-            "focus",
-            "computer science"
+            "depth sensor", "avatar control", "Tracking", "motion capture", "communication behavior", "Virtual reality"
         ]
     },
     {
@@ -4403,16 +4195,7 @@
         "noParticipants": 32.0,
         "studyCharacteristics": "only male participants",
         "keywords": [
-            "perception",
-            "embodied cognition",
-            "cognition",
-            "avatar",
-            "virtual reality",
-            "task",
-            "workload",
-            "einstein",
-            "cognitive psychology",
-            "computer science"
+            "Virtual reality", "Proteus effect", "avatar embodiment", "cognitive performance", "body ownership"
         ]
     },
     {
@@ -4585,18 +4368,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "mixed reality",
-            "augmented reality",
-            "computer mediated reality",
-            "artificial reality",
-            "virtual reality",
-            "virtual actor",
-            "teleconference",
-            "avatar",
-            "immersion",
-            "human computer interaction",
-            "multimedia",
-            "computer science"
+            "tele-conference", "Mixed reality", "Augmented reality", "Virtual reality", "collaborative system", "co-presence", "virtual human"
         ]
     },
     {
@@ -4817,16 +4589,7 @@
         "noParticipants": 24.0,
         "studyCharacteristics": "two-factor repeated-measures within-subject design",
         "keywords": [
-            "virtual reality",
-            "mixed reality",
-            "augmented reality",
-            "point cloud",
-            "task analysis",
-            "usability",
-            "avatar",
-            "context",
-            "human computer interaction",
-            "computer science"
+            "Avatars", "Three-dimensional displays", "Telepresence", "Task analysis", "Collaboration", "Real-time systems", "Faces", "Augmented reality", "face recognition", "helmet mounted displays", "image reconstruction", "stereo image processing", "telecontrol", "point cloud-based reconstruction", "user behavior", "avatar embodiment techniques", "user perception", "Virtual reality", "Mixed reality", "point cloud reconstruction-based avatar", "physical user", "virtual character-based avatar", "user representations", "reconstructed environments", "behavior impression", "remote user", "local user", "goal-directed collaborative puzzle task", "virtual character avatar", "3D telepresence system", "3D asymmetric telepresence", "teleconsultation avatars", "3D environments", "users body motion", "perceived presence", "uncanny valley factors", "asymmetric VR-AR teleconsultation system", "AR head-mounted display", "facial occlusions", "3D reconstruction", "warm-up interaction task", "perceived co-presence", "social presence", "usability ratings", "partly missing facial information", "Embodiment"
         ]
     },
     {
@@ -5038,18 +4801,7 @@
         "noParticipants": 24.0,
         "studyCharacteristics": "only male participants",
         "keywords": [
-            "sense of agency",
-            "virtual machine",
-            "avatar",
-            "virtual reality",
-            "autonomous agent",
-            "teleoperation",
-            "task analysis",
-            "motion",
-            "human computer interaction",
-            "robot",
-            "computer science",
-            "personality"
+            "Avatars", "Atmospheric measurements", "Particle measurements", "Robots", "Training", "Task analysis", "Collaboration", "computer based training", "telerobotics", "virtual co-embodiment", "Virtual body", "virtual avatar", "first-person perspective",  "Virtual environments", "complementary levels", "users level", "motor actions", "similar body motions", "virtual-reality-based training", "collaborative teleoperation", "prior knowledge", "Sense of agency", "personality trait", "Virtual embodiment", "Virtual reality", "user experimentation"
         ]
     },
     {
@@ -5225,16 +4977,7 @@
         "noParticipants": 68,
         "studyCharacteristics": "within-subjects design",
         "keywords": [
-            "augmented reality",
-            "virtual reality",
-            "gesture",
-            "avatar",
-            "human computer interaction",
-            "task analysis",
-            "perception",
-            "fixation",
-            "social perception",
-            "computer science"
+            "Task analysis", "Psychology", "Computational modeling", "Three-dimensional displays", "Skeleton", "Computer science", "Avatars", "Augmented reality", "Human computer interaction", "multi-agent systems", "psychology", "social aspects of automation", "AR environment", "appropriate movement characteristics", "novel data-driven friendliness model", "user-study", "psychological characteristics", "friendly virtual agents", "FVA agents", "plausible movements", "interactive rates", "statistically significant improvement", "friendliness modeling", "friendliness measure", "social presence measure", "modeling perceived friendliness", "virtual agent", "Microsoft HoloLens", "AR setting", "Social perception", "intelligent virtual agents", "friendliness", "gaits", "gestures", "gazing"
         ]
     },
     {
@@ -5441,16 +5184,7 @@
         "noParticipants": 49.0,
         "studyCharacteristics": null,
         "keywords": [
-            "attendance",
-            "higher education",
-            "context",
-            "mathematics education",
-            "class",
-            "virtual reality",
-            "vision",
-            "augmented reality",
-            "avatar",
-            "computer science"
+            "Seminars", "Avatars", "Education", "Virtual environments", "Interviews", "Engineering students", "Augmented reality", "Virtual reality", "Higher Education", "Social VR"
         ]
     },
     {
@@ -5623,16 +5357,7 @@
         "noParticipants": 12,
         "studyCharacteristics": null,
         "keywords": [
-            "augmented reality",
-            "virtual reality",
-            "visualization",
-            "virtual machine",
-            "class",
-            "user interface",
-            "graph drawing",
-            "human computer interaction",
-            "flexibility",
-            "computer science"
+            "Visualization", "Avatars", "Task analysis", "Two dimensional displays", "Collaboration", "Augmented reality", "Monitoring", "Augmented reality", "computer aided instruction", "data visualisation", "directed graphs", "user interfaces", "ObserVAR", "visualization system", "virtual reality users", "virtual reality tools", "immersive learning experience",  "Virtual environments", "classroom environment", "virtual awareness cues", "visual clutter", "augmented reality techniques", "student", "instructor", "force-directed graph drawing algorithm", "VE classrooms", "Remote Collaboration", "VR for Education", "Asymmetric Interaction"
         ]
     },
     {
@@ -5818,16 +5543,7 @@
         "noParticipants": 8,
         "studyCharacteristics": null,
         "keywords": [
-            "information sharing",
-            "mixed reality",
-            "environmental pollution",
-            "analytics",
-            "visualization",
-            "augmented reality",
-            "usability",
-            "sensemaking",
-            "human computer interaction",
-            "computer science"
+            "Collaboration", "Data visualization", "Task analysis", "Visualization", "Information management", "Three-dimensional displays", "Avatars", "data visualisation", "geographic information systems", "groupware", "Virtual reality", "collaborative analysis functions", "mixed reality techniques", "immersive visualization approach", "multiattribute", "geo-spatial data", "intuitive multimodel interactions", "immersive analytics tasks", "collaborative analytics tasks", "system usability", "comprehensive sharing", "remote collaborative analysis experience", "information sharing", "remote GeoSpatial visualization", "remote collaboration systems", "joint tasks", "real-life applications", "environmental pollution", "complex problem", "pollutants", "remote collaborative visualization system", "colocated collaboration effects", "Remote collaboration", "immersive analytics", "geospatial visualization", "mixed reality"
         ]
     },
     {
@@ -6032,16 +5748,7 @@
         "noParticipants": 15,
         "studyCharacteristics": null,
         "keywords": [
-            "voice command device",
-            "augmented reality",
-            "social relation",
-            "gesture",
-            "embodied cognition",
-            "social behavior",
-            "perception",
-            "human computer interaction",
-            "everyday life",
-            "computer science"
+            "Visualization", "Internet of Things", "Robots", "Avatars", "Augmented reality", "Face", "Atmospheric measurements", "Augmented reality", "software agents", "intelligent virtual agents", "social behaviors", "IVA", "AR", "Amazon Alexa", "human-subject study", "embodied gesture", "social interaction", "voice feedback", "voice commands", "artificial intelligence technology", "social behavior", "visual embodiment", "locomotion behaviors", "perceived social presence", "locomotion behavior", "Intelligent virtual agents", "digital assistants", "social interaction", "presence", "confidence", "trust in technology", "augmented reality"
         ]
     },
     {
@@ -6195,16 +5902,7 @@
         "noParticipants": "- ",
         "studyCharacteristics": "doability",
         "keywords": [
-            "augmented reality",
-            "avatar",
-            "human computer interaction",
-            "rendering",
-            "robot",
-            "computer graphics",
-            "drone",
-            "computer science",
-            "physical interaction",
-            "user engagement"
+            "Avatars", "Actuators", "Augmented reality", "Resists", "Manipulators", "Human computer interaction", "rendering (computer graphics)", "physical interaction", "AR avatar", "user engagement", "augmented reality avatar", "physical object", "reality actuator", "Kuroko paradigm", "AR avatars", "rendering", "Computing methodologies", "Computer graphics", "Mixed / augmented reality", "Graphics systemsand interface"
         ]
     },
     {
@@ -6337,18 +6035,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "mixed reality",
-            "computer mediated reality",
-            "augmented reality",
-            "virtual reality",
-            "virtual actor",
-            "avatar",
-            "human computer interaction",
-            "robotics",
-            "multimedia",
-            "computer science",
-            "artificial intelligence",
-            "sense of presence"
+            "Context", "Augmented reality", "Humanoid robots", "Avatars", "Training", "human-surrogate presence", "AR", "robotics", "Virtual reality", "surrogate characteristics", "surrogate behavior", "Human surrogates", "virtual human", "presence", "social interactions", "context-aware"
         ]
     },
     {
@@ -6509,16 +6196,7 @@
         "noParticipants": 24,
         "studyCharacteristics": "good comparison ",
         "keywords": [
-            "augmented reality",
-            "avatar",
-            "context",
-            "perception",
-            "human computer interaction",
-            "visibility",
-            "style",
-            "computer science",
-            "upper body",
-            "user studies"
+            "Avatars", "Collaboration", "Three-dimensional displays", "Telepresence", "Augmented reality", "Task analysis", "audio-visual systems", "Augmented reality", "groupware", "user interfaces", "commercial 3D telepresence systems", "body part visibility", "upper body", "augmented reality remote collaboration", "user perception", "avatar appearance effect", "social presence", "augmented reality telep-resence system", "collaborator avatars", "cartoon style", "avatar-mediated AR remote collaboration systems"
         ]
     },
     {
@@ -6689,14 +6367,7 @@
         "noParticipants": 41,
         "studyCharacteristics": "one of the only ones regarding size",
         "keywords": [
-            "mixed reality",
-            "augmented reality",
-            "avatar",
-            "virtual actor",
-            "human communication",
-            "human computer interaction",
-            "task",
-            "computer science"
+            "Avatars", "Telepresence", "Robots", "Augmented reality", "Collaboration", "Leadership", "helmet mounted displays", "augmented reality telepresence avatars", "augmented reality technologies", "long-distance telepresence communication", "realistic avatar", "virtual human avatar", "augmented reality head-mounted display", "avatar size", "equal-sized avatars", "small-sized avatars", "human communication", "Mixed reality", "avatar-mediated communication", "human-avatar interaction", "avatar telepresence systems", "avatar size", "scenario-based design", "team role"
         ]
     },
     {
@@ -6817,13 +6488,7 @@
         "noParticipants": 10,
         "studyCharacteristics": "Poor number of Participants",
         "keywords": [
-            "augmented reality",
-            "usability",
-            "human centered computing",
-            "avatar",
-            "virtual reality",
-            "human computer interaction",
-            "computer science"
+            "Avatars", "Usability", "Task analysis", "Collaboration", "Augmented reality", "Resists", "groupware", "full body avatar", "augmented reality remote collaboration", "augmented reality remote instruction system", "Human-centered computing", "Human computer interaction", "Interaction paradigms", "Virtual reality"
         ]
     },
     {
@@ -6970,15 +6635,7 @@
         "noParticipants": 52,
         "studyCharacteristics": "nice",
         "keywords": [
-            "augmented reality",
-            "focus group",
-            "human centered computing",
-            "optical head mounted display",
-            "health care",
-            "applied psychology",
-            "erikson s stages of psychosocial development",
-            "computer science",
-            "balance training"
+            "Training", "Prototypes", "Medical services", "Guidelines", "Three-dimensional displays", "Monitoring", "Avatars", "assisted living", "Augmented reality", "computer based training", "helmet mounted displays", "user centred design", "focus groups", "older adults", "augmented reality virtual coach", "balance training instructions", "AR coach", "holographic virtual coach", "user-centered design approach", "Kinect 2", "Meta 2 head mounted display", "balance disorder", "physical therapy", "virtual coach", "Focus Groups", "Human-centered computing", "Human computer interaction (HCI)", "Applied Computing", "Life and medical sciences", "consumer health"
         ]
     },
     {
@@ -7118,13 +6775,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "gaze",
-            "augmented reality",
-            "teleconference",
-            "social cue",
-            "multimedia",
-            "key",
-            "computer science"
+            "Avatars", "Teleconferencing", "Head", "Topology", "Prototypes", "Human factors", "Augmented reality", "telecommunication computing", "teleconferencing", "teleconferencing", "seating topology", "face-to-face meeting", "gaze awareness preservation", "social cues", "heterogeneous environment", "distributed augmented reality meetings", "virtual avatars", "gaze redirecting method", "AR meetings", "redirected head gaze", "Augmented Reality Teleconferencing", "Computer Supported Collaborative Work"
         ]
     },
     {
@@ -7294,16 +6945,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "mixed reality",
-            "gaze",
-            "zoom",
-            "visual communication",
-            "computer supported cooperative work",
-            "avatar",
-            "host",
-            "human computer interaction",
-            "focus",
-            "computer science"
+            "Human-centered computing", "Human computer interaction", "Interaction paradigms", "Mixed / augmented reality", "Gaze Visualisation", "Human-Computer Interaction", "Mixed Reality Remote Collaboration", "CSCW"
         ]
     },
     {
@@ -7472,14 +7114,7 @@
         "noParticipants": "6 + 12",
         "studyCharacteristics": null,
         "keywords": [
-            "viewing angle",
-            "avatar",
-            "rendering",
-            "gaze",
-            "mixed reality",
-            "computer vision",
-            "computer science",
-            "artificial intelligence"
+            "Spherical displays", "trust", "Telecommunication", "Avatars", "Mixed reality"
         ]
     },
     {
@@ -7620,14 +7255,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "mixed reality",
-            "gesture",
-            "context",
-            "avatar",
-            "human computer interaction",
-            "motion",
-            "computer science",
-            "deictic gesture"
+            "Telepresence", "Avatars", "Mixed reality", "social interaction", "User interface toolkits"
         ]
     },
     {
@@ -7755,16 +7383,7 @@
         "noParticipants": null,
         "studyCharacteristics": null,
         "keywords": [
-            "mixed reality",
-            "augmented reality",
-            "host",
-            "human computer interaction",
-            "human centered computing",
-            "computer science",
-            "avatar",
-            "scale",
-            "space",
-            "collaborative interaction"
+            "Three-dimensional displays", "Digital twin", "Avatars", "Collaboration", "Mixed reality", "Systems support", "Augmented reality", "Human-centered computing", "Human computer interaction", "Interaction paradigms", "Mixed / augmented reality", "Collaborative interaction"
         ]
     }
 ]
