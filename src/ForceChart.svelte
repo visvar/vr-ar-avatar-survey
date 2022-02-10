@@ -12,6 +12,23 @@
     $: height = width;
 
     $: links = getLinks(data, connectionsBy);
+    let render_nodes = [];
+    let render_links = [];
+
+    $: simulation = d3
+        .forceSimulation()
+        .nodes(data)
+        .force(
+            "link",
+            d3.forceLink(links).distance((d) => 1 / d.value)
+        )
+        .force("charge", d3.forceManyBody())
+        //.force("collide", d3.forceCollide().radius(20))
+        .force("center", d3.forceCenter(width / 2, height / 2))
+        .on("tick", () => {
+            render_nodes = [...data];
+            render_links = [...links];
+        });
 
     function getLinks(data, connectionsBy) {
         const links = [];
@@ -29,40 +46,13 @@
             }
         }
         console.log(links);
+        if (simulation) {
+            simulation.alpha(1);
+            simulation.restart();
+        }
         return links;
     }
 
-    function force(node, { data, links }) {
-        const links_g = d3.select(node).append("g");
-        const nodes_g = d3.select(node).append("g");
-        function runSimulation({ data, links }) {
-            const linkPaths = links_g.selectAll("path").data(links).join("path").attr("fill", "none").attr("stroke", "#ddd");
-            const nodes = nodes_g
-                .selectAll("circle")
-                .data(data)
-                .join("circle")
-                .attr("r", 4)
-                .attr("fill", (d) => colorScale((d) => d.conference));
-            nodes.append("title").text((d) => d.title + "\n" + d.authors + "\n" + d.keywords + "\n" + d.fieldOfStudy);
-
-            d3.forceSimulation(data)
-                .force(
-                    "link",
-                    d3.forceLink(links).distance((d) => 10 / d.value)
-                )
-                .force("charge", d3.forceManyBody())
-                .force("collide", d3.forceCollide().radius(20))
-                .force("center", d3.forceCenter(width / 2, height / 2))
-                .on("tick", () => {
-                    linkPaths.attr("d", ({ source, target }) => `M ${source.x} ${source.y} L ${target.x} ${target.y}`);
-                    nodes.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-                });
-        }
-        runSimulation({ data, links });
-        return {
-            update: runSimulation,
-        };
-    }
 
     $: conferences = Array.from(new Set(data.map((d) => d.conference)));
     $: colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(conferences);
@@ -82,7 +72,21 @@
             </label>
         </div>
         <svg {width} {height}>
-            <g use:force={{ data, links }} />
+            <g>
+                {#each render_links as { source: { x: x1, y: y1 }, target: { x: x2, y: y2 } }}
+                    <path d="M {x1} {y1} L {x2} {y2}" fill="none" stroke="#ddd" />
+                {/each}
+            </g>
+            <g>
+                {#each render_nodes as node, i}
+                    <circle cx={node.x} cy={node.y} r="4" fill={colorScale(node.conference)}>
+                        <title>
+                            {node.title}{'\n'}
+                            {node[connectionsBy]}
+                        </title>
+                    </circle>
+                {/each}
+            </g>
         </svg>
         <div id="legend">
             {#each conferences as value}
