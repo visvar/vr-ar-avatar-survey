@@ -18,8 +18,6 @@
 
     let topN = 5;
 
-    $: console.log(data);
-
     $: values = data.reduce(
         counter((d) => d[groupBy]),
         new Map()
