@@ -14,6 +14,7 @@
   import RankChart from "./RankChart.svelte";
   import BarChart from "./BarChart.svelte";
   import ForceChart from "./ForceChart.svelte";
+  import DRChart from "./DRChart.svelte";
   import * as d3 from "d3";
 
   let windowWidth;
@@ -95,6 +96,7 @@
         {:else if data !== null}
           <Filter {allData} bind:data />
           <div class="visualizationContainer">
+            <DRChart {data} width={visWidth} shown={true} />
             <ForceChart {data} width={visWidth} shown={true} />
             <BarChart {data} groupBy="authors" width={visWidth} shown={true} />
             <BarChart {data} groupBy="keywords" width={visWidth} shown={true} />
