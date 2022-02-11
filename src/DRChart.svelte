@@ -16,6 +16,9 @@
   $: D = getCoocurrences(data, coocurrencesOf); // Distance-matrix
 
   function getCoocurrences(data, coocurrencesOf) {
+    if (!data || data.length === 0) {
+      return null;
+    }
     console.log("compute D", coocurrencesOf);
 
     const set = Array.from(new Set(data.map((d) => d[coocurrencesOf]).flat()));
@@ -43,16 +46,20 @@
   let Y = [];
 
   $: {
-    const projection = druid.UMAP.transform(
-      D,
-      15,
-      1,
-      1,
-      2,
-      "precomputed"
-    ).to2dArray.map((row) => Array.from(row));
-    console.log("projection", projection);
-    Y = [...projection];
+    if (data && data.length > 0) {
+      const projection = druid.UMAP.transform(
+        D,
+        15,
+        1,
+        1,
+        2,
+        "precomputed"
+      ).to2dArray.map((row) => Array.from(row));
+      console.log("projection", projection);
+      Y = [...projection];
+    } else {
+      Y = [];
+    }
   }
 
   function get_scales(Y, [lo, hi]) {
@@ -93,26 +100,28 @@
       </label>
     </div>
     <div slot="content">
-      <svg {width} {height}>
-        {#each Y as [px, py], i}
-          <circle
-            cx={scales.x(px)}
-            cy={scales.y(py)}
-            r="4"
-            fill={colorScale(data[i].conference)}
-          >
-            <title>
-              {data[i].title}{"\n"}
-              {data[i][coocurrencesOf]}
-            </title>
-          </circle>
-        {/each}
-      </svg>
-      <div id="legend">
-        {#each conferences as value}
-          <div><span style="color: {colorScale(value)}">●</span> {value}</div>
-        {/each}
-      </div>
+      {#if data.length > 0}
+        <svg {width} {height}>
+          {#each Y as [px, py], i}
+            <circle
+              cx={scales.x(px)}
+              cy={scales.y(py)}
+              r="4"
+              fill={colorScale(data[i].conference)}
+            >
+              <title>
+                {data[i].title}{"\n"}
+                {data[i][coocurrencesOf]}
+              </title>
+            </circle>
+          {/each}
+        </svg>
+        <div id="legend">
+          {#each conferences as value}
+            <div><span style="color: {colorScale(value)}">●</span> {value}</div>
+          {/each}
+        </div>
+      {/if}
     </div>
   </VisWrapper>
 </main>

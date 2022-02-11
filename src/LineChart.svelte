@@ -1,5 +1,6 @@
 <script>
   import * as d3 from "d3";
+  import Select, { Option } from "@smui/select";
   import VisWrapper from "./VisWrapper.svelte";
   import axis from "./axis.js";
 
@@ -86,22 +87,17 @@
 <main>
   <VisWrapper title="Line Chart" {shown}>
     <div slot="control">
-      <div class="separator" />
-      <label>
-        group by
-        <select bind:value={groupBy}>
-          <option value="keywords">Keywords</option>
-          <option value="fieldOfStudy">Field of Study</option>
-        </select>
-      </label>
-      <label>
-        top N
-        <select bind:value={topN}>
-          {#each d3.range(3, 11) as n}
-            <option value={n}>{n}</option>
-          {/each}
-        </select>
-      </label>
+      <Select bind:value={groupBy} label="group by">
+        <Option value="keywords">Keywords</Option>
+        <Option value="fieldOfStudy">Field of Study</Option>
+      </Select>
+      <Select bind:value={topN} label="top">
+        {#each d3.range(3, 11) as option}
+          <Option value={option}>
+            {option}
+          </Option>
+        {/each}
+      </Select>
     </div>
     <div slot="content">
       <svg {width} {height}>

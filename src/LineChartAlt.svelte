@@ -1,10 +1,12 @@
 <script>
   import * as d3 from "d3";
+  import Select, { Option } from "@smui/select";
   import VisWrapper from "./VisWrapper.svelte";
   import axis from "./axis.js";
 
   export let data;
   export let shown;
+  export let width = 400;
 
   /** @type {"keywords"|"fieldOfStudy"} */
   let groupBy = "fieldOfStudy";
@@ -61,7 +63,7 @@
     .scaleOrdinal(d3.schemeTableau10)
     .domain(groupedData.map((d) => d.value));
 
-  $: width = 200;
+  const chartWidth = 200;
   $: height = 80;
   const margin = { top: 10, bottom: 25, left: 25, right: 1 };
 
@@ -74,7 +76,7 @@
   $: x = d3
     .scaleLinear()
     .domain(years)
-    .range([margin.left, width - margin.right]);
+    .range([margin.left, chartWidth - margin.right]);
 
   $: line = d3
     .line()
@@ -87,28 +89,33 @@
   <VisWrapper title="Line Chart" {shown}>
     <div slot="control">
       <div class="separator" />
-      <label>
-        group by
-        <select bind:value={groupBy}>
-          <option value="keywords">Keywords</option>
-          <option value="fieldOfStudy">Field of Study</option>
-        </select>
-      </label>
-      <label>
-        top N
-        <select bind:value={topN}>
-          {#each d3.range(3, 11) as n}
-            <option value={n}>{n}</option>
-          {/each}
-        </select>
-      </label>
+      <Select bind:value={groupBy} label="group by">
+        <Option value="keywords">Keywords</Option>
+        <Option value="fieldOfStudy">Field of Study</Option>
+      </Select>
+      <Select bind:value={topN} label="top">
+        {#each d3.range(3, 11) as option}
+          <Option value={option}>
+            {option}
+          </Option>
+        {/each}
+      </Select>
     </div>
     <div slot="content">
-      <div id="legend">
+      <div
+        class="legend"
+        style="grid-template-columns: repeat({Math.floor(
+          width / chartWidth
+        )}, 1fr);"
+      >
         {#each groupedData as row, i}
           <div class="cell">
             <div>{row.value}</div>
-            <svg {width} {height} viewbox="0 0 {width} {height}">
+            <svg
+              width={chartWidth}
+              {height}
+              viewbox="0 0 {chartWidth} {height}"
+            >
               {#each groupedData as row, j}
                 {#if i != j}
                   <g>
@@ -163,15 +170,8 @@
     flex-grow: 1;
   }
 
-  .toolbar {
-    display: flex;
-    gap: 1em;
-    padding: 1em;
-  }
-
-  #legend {
+  .legend {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
   }
 
   .cell {

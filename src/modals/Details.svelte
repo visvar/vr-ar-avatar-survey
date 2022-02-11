@@ -1,5 +1,5 @@
 <script>
-  import { getImgSrc } from "./lib.js";
+  import { getImgSrc } from "../lib.js";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Label } from "@smui/button";
   import { createEventDispatcher } from "svelte";

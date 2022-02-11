@@ -2,8 +2,7 @@
   export let data;
 
   import Select, { Option } from "@smui/select";
-  import Switch from "@smui/switch";
-  import Details from "./Details.svelte";
+  import Details from "./modals/Details.svelte";
   import { getImgSrc } from "./lib";
 
   let selected = null;

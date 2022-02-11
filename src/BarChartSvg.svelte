@@ -77,3 +77,10 @@
     />
   </svg>
 </main>
+
+<style>
+  path,
+  g {
+    transition: all 350ms;
+  }
+</style>

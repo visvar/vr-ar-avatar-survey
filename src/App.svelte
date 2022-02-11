@@ -6,7 +6,6 @@
   import IconButton from "@smui/icon-button";
   import { firstLetterUpper } from "./lib.js";
   import Filter from "./Filter.svelte";
-  import BubbleChart from "./BubbleChart.svelte";
   import BubbleChartAlt from "./BubbleChartAlt.svelte";
   import ModalityCorrelation from "./ModalityCorrelation.svelte";
   import Publications from "./Publications.svelte";
@@ -16,9 +15,12 @@
   import BarChart from "./BarChart.svelte";
   import ForceChart from "./ForceChart.svelte";
   import DRChart from "./DRChart.svelte";
-  import * as d3 from "d3";
+  import Help from "./modals/Help.svelte";
+  import About from "./modals/About.svelte";
 
   let windowWidth;
+  let showHelp;
+  let showAbout;
 
   $: publicationWidth = Math.max(windowWidth * 0.4, 600);
   // $: console.log("window w", windowWidth);
@@ -81,7 +83,20 @@
           </Title>
         </Section>
         <Section align="end" toolbar>
-          <IconButton class="material-icons" aria-label="Bookmark this page">
+          <IconButton
+            class="material-icons"
+            on:click={() => {
+              showHelp = true;
+            }}
+          >
+            help
+          </IconButton>
+          <IconButton
+            class="material-icons"
+            on:click={() => {
+              showAbout = true;
+            }}
+          >
             info
           </IconButton>
         </Section>
@@ -95,14 +110,11 @@
           <Filter {allData} bind:data />
           <div class="visualizationContainer">
             <BubbleChartAlt {data} width={visWidth} shown={true} />
-            <BubbleChart {data} width={visWidth} shown={true} />
-            <DRChart {data} width={visWidth} shown={true} />
-            <ForceChart {data} width={visWidth} shown={true} />
-            <BarChart {data} groupBy="authors" width={visWidth} shown={true} />
-            <BarChart {data} groupBy="keywords" width={visWidth} shown={true} />
-            <BarChart {data} groupBy="fieldOfStudy" width={visWidth} shown={true} />
+            <DRChart {data} width={visWidth} shown={false} />
+            <ForceChart {data} width={visWidth} shown={false} />
+            <BarChart {data} width={visWidth} shown={true} />
             <ModalityCorrelation {data} width={visWidth} shown={true} />
-            <RankChart {data} width={visWidth} shown={true} />
+            <!-- <RankChart {data} width={visWidth} shown={true} /> -->
             <LineChart {data} width={visWidth} shown={true} />
             <LineChartAlt {data} width={visWidth} shown={true} />
           </div>
@@ -111,6 +123,8 @@
       </main>
     </div>
   </div>
+  <Help bind:open={showHelp} />
+  <About bind:open={showAbout} />
 </div>
 
 <style>
