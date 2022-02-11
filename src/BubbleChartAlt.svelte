@@ -1,6 +1,7 @@
 <script>
     import * as d3 from "d3";
     import VisWrapper from "./VisWrapper.svelte";
+    import { fade } from "svelte/transition";
 
     export let data;
     export let width;
@@ -109,10 +110,10 @@
 
 <main>
     <VisWrapper title="Bubble Chart" {shown}>
-        <div>
+        <div slot="content">
             <svg {width} {height} viewBox="-{margin.left},-{margin.top},{width},{height}" fill="currentColor" font-family="sans-serif" text-anchor="middle">
                 {#each leaves as leaf}
-                    <g transform="translate({leaf.x}, {leaf.y})">
+                    <g transform="translate({leaf.x}, {leaf.y})" transition:fade={{duration: 350}}>
                         <circle r={leaf.r} fill={color(G[leaf.data])} fill-opacity=0.5 />
                         <title>{T[leaf.data]}</title>
                         <clipPath id="{uid}-clip-{leaf.data}">
@@ -143,9 +144,11 @@
     svg g {
         text-decoration: none;
         fill: #111;
+        transition: all 350ms;
     }
 
     circle {
+        transition: all 350ms;
     }
 
     text {

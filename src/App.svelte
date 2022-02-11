@@ -98,14 +98,9 @@
             <BubbleChart {data} width={visWidth} shown={true} />
             <DRChart {data} width={visWidth} shown={true} />
             <ForceChart {data} width={visWidth} shown={true} />
-<<<<<<< HEAD
-            <BarChart {data} width={visWidth} shown={true} />
-            <BubbleChart {data} width={visWidth} shown={true} />
-=======
             <BarChart {data} groupBy="authors" width={visWidth} shown={true} />
             <BarChart {data} groupBy="keywords" width={visWidth} shown={true} />
             <BarChart {data} groupBy="fieldOfStudy" width={visWidth} shown={true} />
->>>>>>> 61cd3ac (added Svelty BubbleChart)
             <ModalityCorrelation {data} width={visWidth} shown={true} />
             <RankChart {data} width={visWidth} shown={true} />
             <LineChart {data} width={visWidth} shown={true} />
