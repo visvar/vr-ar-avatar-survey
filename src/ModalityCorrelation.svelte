@@ -2,7 +2,7 @@
   import {} from "svelte";
   import * as d3 from "d3";
   import VisWrapper from "./VisWrapper.svelte";
-  import { map } from "d3";
+  import axis from "./axis.js";
 
   export let data;
   export let width;
@@ -86,22 +86,11 @@
     .range([marginLeft + 10, width - 10]);
 
   $: scaleStroke = d3.scaleLinear().domain([0, groups[0].count]).range([1, 5]);
-
-  function axis(node, { axis, scale }) {
-    const g = d3.select(node);
-    function drawAxis({ axis, scale }) {
-      g.call(axis(scale));
-    }
-    drawAxis({ axis, scale });
-    return {
-      update: drawAxis,
-    };
-  }
 </script>
 
 <main>
   <VisWrapper title="Modality Correlation" {shown}>
-    <div id="modalityCorrelation">
+    <div slot="content">
       <svg {width} {height}>
         <!-- Labels and horizontal lines -->
         {#each modalities as modality}

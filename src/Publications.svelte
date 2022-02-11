@@ -14,6 +14,7 @@
     "Year (new-old)",
     "Year (old-new)",
     "Title (A-Z)",
+    "Study participants (high-low)",
   ];
 
   const sort = (data, sortBy) => {
@@ -26,6 +27,8 @@
       comparator = (a, b) => a.year - b.year;
     } else if (sortBy === "Citations (high-low)") {
       comparator = (a, b) => b.citationCount - a.citationCount;
+    } else if (sortBy === "Study participants (high-low)") {
+      comparator = (a, b) => (b.noParticipants ?? 0) - (a.noParticipants ?? 0);
     }
     return [...data].sort(comparator);
   };
@@ -59,10 +62,19 @@
           <b>{publication.year}</b>
           <i>{publication.conference}</i><br />
           {publication.authors[0]} et al.
-          <span class="citations">
+          <span class="info" title="Cited {publication.citationCount} times">
             {publication.citationCount}
-            <span class="material-icons"> format_quote </span>
+            <span class="material-icons icon"> format_quote </span>
           </span>
+          {#if publication.hasStudy}
+            <span
+              class="info"
+              title="Has a user study with {publication.noParticipants} participants"
+            >
+              {publication.noParticipants}
+              <span class="material-icons icon"> group </span>
+            </span>
+          {/if}
         </p>
         <!-- <p class="abstract">
           {publication.abstract}
@@ -110,13 +122,14 @@
     border-radius: 2px;
   }
 
-  .citations {
+  .info {
     padding: 1px 2px 1px 4px;
     background: #eee;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
-  .citations span {
+
+  .icon {
     transform: translate(0, 6px);
     color: #666;
   }

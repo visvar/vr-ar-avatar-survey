@@ -62,9 +62,6 @@
     return data;
   };
   loadData();
-
-  let selectLineChartGroupBy = "keywords";
-  let selectLineChartTopN = 10;
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -98,13 +95,11 @@
           <div class="visualizationContainer">
             <DRChart {data} width={visWidth} shown={true} />
             <ForceChart {data} width={visWidth} shown={true} />
-            <BarChart {data} groupBy="authors" width={visWidth} shown={true} />
-            <BarChart {data} groupBy="keywords" width={visWidth} shown={true} />
-            <BarChart {data} groupBy="fieldOfStudy" width={visWidth} shown={true} />
+            <BarChart {data} width={visWidth} shown={true} />
             <BubbleChart {data} width={visWidth} shown={true} />
             <ModalityCorrelation {data} width={visWidth} shown={true} />
             <RankChart {data} width={visWidth} shown={true} />
-            <LineChart {data} width={visWidth} shown={true}  />
+            <LineChart {data} width={visWidth} shown={true} />
             <LineChartAlt {data} width={visWidth} shown={true} />
           </div>
           <Publications {data} />

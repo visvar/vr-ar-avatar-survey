@@ -111,6 +111,8 @@
 
 <main>
   <VisWrapper title="Bubble Chart" {shown}>
-    <div id="bubbleChart" on:load={showVis()} />
+    <div slot="content">
+      <div id="bubbleChart" on:load={showVis()} />
+    </div>
   </VisWrapper>
 </main>

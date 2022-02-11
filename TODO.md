@@ -1,8 +1,27 @@
 # TODO
 
+
+1. [TODO](#todo)
+2. [Tasks](#tasks)
+   1. [GitHub](#github)
+   2. [Observable](#observable)
+   3. [Sketch](#sketch)
+   4. [Notes for visualizations](#notes-for-visualizations)
+
+# Tasks
+
 - resize images like on website
 - vis
-  -
+  - modality
+    - x axis labels
+    - choose pairs
+    - sort by jaccard?
+  - bubble
+    - also for abstract words
+
+## GitHub
+
+https://github.com/visvar/vr-ar-avatar-survey
 
 ## Observable
 
@@ -18,7 +37,7 @@ https://observablehq.com/d/87c5f6eaa8e83adc
 ## Notes for visualizations
 
 - Bubble chart
-  - fieldOfStudy 
+  - fieldOfStudy
   - authors
   - technology
   - abstract words
@@ -37,12 +56,12 @@ https://observablehq.com/d/87c5f6eaa8e83adc
   - conferences
   - **What to show:** Basic distribution of occurrences, not for everyone, only more than 2-3 times
 - Force directed graph
-  - publications as data points and fieldOfStudy for force, coloring based on conference 
+  - publications as data points and fieldOfStudy for force, coloring based on conference
   - **What to show:** which publications correlate with other publications, based on the fieldOfStudys, how strong are the links?
 - Scatterplot
   - dynamic selection of x/y axis, choose two of:
      - collaboration
      - social interaction
      - representation
-     - immersion type 
+     - immersion type
      - **What to show:** occurrences based on features, potentially highlight clusters in the data
