@@ -139,7 +139,11 @@
         <!-- x axis -->
         <g
           transform="translate(0, {height - marginBottom})"
-          use:axis={{ axis: d3.axisBottom, scale: scaleX }}
+          use:axis={{
+            axis: d3.axisBottom,
+            scale: scaleX,
+            tickFormat: (d) => groups[d].count,
+          }}
         />
       </svg>
     </div>
