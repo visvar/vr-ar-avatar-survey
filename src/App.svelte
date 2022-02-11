@@ -111,7 +111,7 @@
           <div class="visualizationContainer">
             <BubbleChartAlt {data} width={visWidth} shown={true} />
             <DRChart {data} width={visWidth} shown={false} />
-            <ForceChart {data} width={visWidth} shown={false} />
+            <ForceChart {data} width={visWidth} shown={true} />
             <BarChart {data} width={visWidth} shown={true} />
             <ModalityCorrelation {data} width={visWidth} shown={true} />
             <!-- <RankChart {data} width={visWidth} shown={true} /> -->

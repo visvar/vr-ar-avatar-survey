@@ -1,5 +1,6 @@
 <script>
   import * as d3 from "d3";
+  import Select, { Option } from "@smui/select";
   import VisWrapper from "./VisWrapper.svelte";
 
   export let data;
@@ -8,12 +9,16 @@
 
   /** @type {"authors"|"keywords"|"fieldOfStudy"} */
   let connectionsBy = "keywords";
+  let minCountForLink = 0;
 
   $: height = width;
 
   $: links = getLinks(data, connectionsBy);
   let render_nodes = [];
   let render_links = [];
+
+  $: x = d3.scaleLinear().range([20, width - 20]);
+  $: y = d3.scaleLinear().range([20, height - 20]);
 
   $: simulation = d3
     .forceSimulation()
@@ -28,6 +33,8 @@
     .on("tick", () => {
       render_nodes = [...data];
       render_links = [...links];
+      x.domain(d3.extent(render_nodes, (d) => d.x));
+      y.domain(d3.extent(render_nodes, (d) => d.y));
     });
 
   function getLinks(data, connectionsBy) {
@@ -48,7 +55,6 @@
         }
       }
     }
-    console.log(links);
     if (simulation) {
       simulation.alpha(1);
       simulation.restart();
@@ -63,42 +69,62 @@
 <main>
   <VisWrapper title="Force Directed Chart" {shown}>
     <div slot="control">
-      <div class="separator" />
-      <label>
-        connections By
-        <select bind:value={connectionsBy}>
-          <option value="keywords">Keywords</option>
-          <option value="fieldOfStudy">Field of Study</option>
-          <option value="authors">Authors</option>
-        </select>
-      </label>
+      <Select bind:value={connectionsBy} label="Connections for">
+        <Option value="keywords">Keywords</Option>
+        <Option value="fieldOfStudy">Field of Study</Option>
+        <Option value="authors">Authors</Option>
+      </Select>
+      <Select
+        bind:value={minCountForLink}
+        label="hide links with less than"
+        title="hide links with less than"
+      >
+        {#each d3.range(0, 10) as option}
+          <Option value={option}>
+            {option}
+          </Option>
+        {/each}
+      </Select>
     </div>
     <div slot="content">
       <svg {width} {height}>
+        <!-- Links -->
         <g>
-          {#each render_links as { source: { x: x1, y: y1 }, target: { x: x2, y: y2 } }}
-            <path d="M {x1} {y1} L {x2} {y2}" fill="none" stroke="#ddd" />
+          {#each render_links as { value, source: { x: x1, y: y1 }, target: { x: x2, y: y2 } }}
+            {#if value > minCountForLink}
+              <path
+                d="M {x(x1)} {y(y1)} L {x(x2)} {y(y2)}"
+                fill="none"
+                stroke="#ddd"
+                strokeWidth={value}
+              />
+            {/if}
           {/each}
         </g>
+        <!-- Nodes -->
         <g>
           {#each render_nodes as node, i}
             <circle
-              cx={node.x}
-              cy={node.y}
+              cx={x(node.x)}
+              cy={y(node.y)}
               r="4"
               fill={colorScale(node.conference)}
             >
               <title>
-                {node.title}{"\n"}
-                {node[connectionsBy]}
+                {node.title} ({node.year}){"\n\n"}
+                {node[connectionsBy].join(", ")}
               </title>
             </circle>
           {/each}
         </g>
       </svg>
+      <!-- Legend -->
       <div class="legend">
         {#each conferences as value}
-          <div><span style="color: {colorScale(value)}">●</span> {value}</div>
+          <div>
+            <span style="color: {colorScale(value)}">●</span>
+            {value}
+          </div>
         {/each}
       </div>
     </div>
@@ -106,14 +132,6 @@
 </main>
 
 <style>
-  .separator {
-    flex-grow: 1;
-  }
-  .toolbar {
-    display: flex;
-    gap: 1em;
-    padding: 1em;
-  }
   .legend {
     padding: 1em;
     display: grid;
