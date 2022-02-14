@@ -50,6 +50,10 @@ https://observablehq.com/d/87c5f6eaa8e83adc
 - Modality correlation
   - collaboration vs. immersion vs. representation vs. social interaction
   - **What to show:** correlation of modalities according to line width between two (or more???) modalities
+    - Communication: Facial expression, eye gaze, body movement, voice, point cloud
+    - Collaboration: co-located, remote, distributed,
+    - Immersion: AR, VR
+    - Representation: realistic, stylized, cartoon, mannequin, hologram
 - Bar chart
   - fieldOfStudy -> coloring like bubble chart
   - authors
