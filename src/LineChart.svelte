@@ -132,7 +132,7 @@
         />
       </svg>
 
-      <div id="legend">
+      <div class="legend">
         {#each colorScale.domain() as value}
           <div><span style="color: {colorScale(value)}">●</span> {value}</div>
         {/each}
@@ -142,17 +142,7 @@
 </main>
 
 <style>
-  .separator {
-    flex-grow: 1;
-  }
-
-  .toolbar {
-    display: flex;
-    gap: 1em;
-    padding: 1em;
-  }
-
-  #legend {
+  .legend {
     padding: 1em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

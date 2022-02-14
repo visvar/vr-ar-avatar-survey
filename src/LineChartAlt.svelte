@@ -88,7 +88,6 @@
 <main>
   <VisWrapper title="Line Chart" {shown}>
     <div slot="control">
-      <div class="separator" />
       <Select bind:value={groupBy} label="group by">
         <Option value="keywords">Keywords</Option>
         <Option value="fieldOfStudy">Field of Study</Option>
@@ -166,10 +165,6 @@
 </main>
 
 <style>
-  .separator {
-    flex-grow: 1;
-  }
-
   .legend {
     display: grid;
   }

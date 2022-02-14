@@ -5,13 +5,13 @@
   import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
   import IconButton from "@smui/icon-button";
   import { firstLetterUpper } from "./lib.js";
-  import Filter from "./Filter.svelte";
+  import Filter from "./filter/Filter.svelte";
   import BubbleChartAlt from "./BubbleChartAlt.svelte";
   import ModalityCorrelation from "./ModalityCorrelation.svelte";
   import Publications from "./Publications.svelte";
   import LineChart from "./LineChart.svelte";
   import LineChartAlt from "./LineChartAlt.svelte";
-  import RankChart from "./RankChart.svelte";
+  // import RankChart from "./RankChart.svelte";
   import BarChart from "./BarChart.svelte";
   import ForceChart from "./ForceChart.svelte";
   import DRChart from "./DRChart.svelte";
