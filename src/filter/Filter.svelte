@@ -32,64 +32,36 @@
   let fieldOfStudy = sortByCount(allData.flatMap((d) => d.fieldOfStudy));
   let selectedFieldOfStudy = [...fieldOfStudy];
 
-  const filterVisibility = (publication, inputState, checker) => {
+  // const filterVisibility = (publication, inputState, checker) => {
+  //   if (inputState === "indifferent") {
+  //     return true;
+  //   } else if (inputState === "show") {
+  //     return checker(publication);
+  //   } else if (inputState === "hide") {
+  //     return !checker(publication);
+  //   }
+  // };
+
+  /**
+   * Filter according to visibility toggles
+   * @param {object} publication publication data
+   * @param {string} inputState current value of the input element
+   * @param {string} key data key
+   * @param {string} value dtaa value
+   */
+  const filterVsb = (publication, inputState, key, value) => {
     if (inputState === "indifferent") {
       return true;
-    } else if (inputState === "show") {
-      return checker(publication);
+    }
+    const hasValue = publication[key].includes(value);
+
+    if (inputState === "show") {
+      return hasValue;
     } else if (inputState === "hide") {
-      return !checker(publication);
+      return !hasValue;
     }
   };
 
-  /**
-   * Updates the data globally depending on current input values
-   */
-  const filter = () => {
-    data = allData.filter((publication) => {
-      /**
-       * Filter for visibility
-       */
-      if (
-        !filterVisibility(publication, augmReality, (d) =>
-          d.type.includes("ar")
-        )
-      ) {
-        return false;
-      }
-      if (
-        !filterVisibility(publication, virtReality, (d) =>
-          d.type.includes("vr")
-        )
-      ) {
-        return false;
-      }
-      /**
-       * Filter for item selections
-       */
-      // Has at least one selected keyword
-      if (d3.intersection(publication.keywords, selectedKeywords).size === 0) {
-        return false;
-      }
-      // Has at least one selected technology
-      if (
-        d3.intersection(publication.technology, selectedTechnology).size === 0
-      ) {
-        return false;
-      }
-      // Has at least one selected field of study
-      if (
-        d3.intersection(publication.fieldOfStudy, selectedFieldOfStudy).size ===
-        0
-      ) {
-        return false;
-      }
-      return true;
-    });
-    console.log("filtered", data);
-  };
-
-  // afterUpdate(filter);
   $: if (
     augmReality ||
     virtReality ||
@@ -105,6 +77,47 @@
   ) {
     filter();
   }
+
+  /**
+   * Updates the data globally depending on current input values
+   */
+  const filter = () => {
+    data = allData.filter((pub) => {
+      /**
+       * Filter for visibility
+       */
+      // Type
+      if (!filterVsb(pub, augmReality, "type", "ar")) return false;
+      if (!filterVsb(pub, virtReality, "type", "vr")) return false;
+      // Collab
+      if (!filterVsb(pub, colocated, "collaboration", "co-located"))
+        return false;
+      if (!filterVsb(pub, distributed, "collaboration", "distibuted"))
+        return false;
+      if (!filterVsb(pub, remote, "collaboration", "remote")) return false;
+      // Representation
+      if (!filterVsb(pub, realistic, "style", "realistic")) return false;
+      if (!filterVsb(pub, stylized, "style", "stylized")) return false;
+      if (!filterVsb(pub, cartoon, "style", "cartoon")) return false;
+      /**
+       * Filter for item selections
+       */
+      // Has at least one selected keyword
+      if (d3.intersection(pub.keywords, selectedKeywords).size === 0) {
+        return false;
+      }
+      // Has at least one selected technology
+      if (d3.intersection(pub.technology, selectedTechnology).size === 0) {
+        return false;
+      }
+      // Has at least one selected field of study
+      if (d3.intersection(pub.fieldOfStudy, selectedFieldOfStudy).size === 0) {
+        return false;
+      }
+      return true;
+    });
+    console.log("filtered", data);
+  };
 </script>
 
 <main>
@@ -113,7 +126,7 @@
   <div class="howto">
     <div class="howtogrid">
       <IconButton class="material-icons">visibility</IconButton>
-      <span> <b>Only:</b> Show only these. </span>
+      <span> <b>Show:</b> Show these. </span>
       <IconButton class="material-icons">panorama_fish_eye</IconButton>
       <span> <b>Indifferent:</b> I don't care. </span>
       <IconButton class="material-icons">visibility_off</IconButton>
@@ -211,6 +224,7 @@
   }
 
   .filterSection .grid {
+    padding-left: 5px;
     display: grid;
     grid-template-columns: auto 150px;
     align-items: center;

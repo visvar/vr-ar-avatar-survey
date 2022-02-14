@@ -121,6 +121,8 @@
         <Option value="fieldOfStudy">Field of Study</Option>
         <Option value="keywords">Keywords</Option>
         <Option value="abstractWords">Abstract</Option>
+        <Option value="technology">Technology</Option>
+        <Option value="authors">Authors</Option>
       </Select>
     </div>
     <div slot="content">

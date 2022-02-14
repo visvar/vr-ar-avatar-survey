@@ -103,24 +103,26 @@
       </Row>
     </TopAppBar>
     <div class="flexor-content">
-      <main>
-        {#if loading === true}
-          Loading...
-        {:else if data !== null}
+      {#if loading === true}
+        <div class="loading">
+          <div>Loading...</div>
+        </div>
+      {:else if data !== null}
+        <main>
           <Filter {allData} bind:data />
           <div class="visualizationContainer">
+            <ModalityCorrelation {data} width={visWidth} shown={true} />
             <BubbleChartAlt {data} width={visWidth} shown={true} />
             <DRChart {data} width={visWidth} shown={false} />
             <ForceChart {data} width={visWidth} shown={true} />
             <BarChart {data} width={visWidth} shown={true} />
-            <ModalityCorrelation {data} width={visWidth} shown={true} />
             <!-- <RankChart {data} width={visWidth} shown={true} /> -->
             <LineChart {data} width={visWidth} shown={true} />
             <LineChartAlt {data} width={visWidth} shown={true} />
           </div>
           <Publications {data} />
-        {/if}
-      </main>
+        </main>
+      {/if}
     </div>
   </div>
   <Help bind:open={showHelp} />
@@ -157,11 +159,17 @@
     flex-grow: 1;
     overflow: auto;
     margin-top: 10px;
-    margin-bottom: 10px;
   }
 
   main {
     display: grid;
     grid-template-columns: 360px auto minmax(600px, 40%);
+  }
+
+  .loading {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: larger;
   }
 </style>

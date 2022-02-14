@@ -4,9 +4,11 @@
 
   export let data;
   export let width;
-  export let height = width / 3;
-  export let groupBy = "keywords";
   export let topN = 5;
+  export let groupBy = "keywords";
+
+  $: height = topN * 30;
+
   let margin = {
     top: 1,
     left: 150,
@@ -79,6 +81,10 @@
 </main>
 
 <style>
+  svg g.tick text {
+    font-size: 14px !important;
+  }
+
   path,
   g {
     transition: all 350ms;

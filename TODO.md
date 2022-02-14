@@ -10,13 +10,14 @@
 
 # Tasks
 
+- filter
+  - FH really not sure whether visibility toggles are a good idea, confusing and annoying to implement
+    - just do like item selections?
+
 - vis
   - modality
-    - x axis labels
     - choose pairs
     - sort by jaccard?
-  - bubble
-    - also for abstract words
 
 ## GitHub
 
@@ -36,10 +37,6 @@ https://observablehq.com/d/87c5f6eaa8e83adc
 ## Notes for visualizations
 
 - Bubble chart
-  - fieldOfStudy
-  - authors
-  - technology
-  - abstract words
   - **What to show:** distribution of words/authors/etc. for bubble size, color grouping for fieldOfStudy
 - Line Chart *Done*
   - for each year:

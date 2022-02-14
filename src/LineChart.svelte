@@ -6,6 +6,7 @@
 
   export let data;
   export let shown;
+  export let width;
 
   /** @type {"keywords"|"fieldOfStudy"} */
   let groupBy = "fieldOfStudy";
@@ -62,7 +63,6 @@
     .scaleOrdinal(d3.schemeTableau10)
     .domain(groupedData.map((d) => d.value));
 
-  $: width = Math.min(window.innerWidth - 330, window.innerHeight - 100);
   $: height = width / 3;
   const margin = 50;
 

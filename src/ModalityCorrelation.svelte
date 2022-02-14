@@ -2,7 +2,6 @@
   import {} from "svelte";
   import * as d3 from "d3";
   import VisWrapper from "./VisWrapper.svelte";
-  import axis from "./axis.js";
 
   export let data;
   export let width;
@@ -34,14 +33,16 @@
         { name: "Distributed", value: "distributed" },
       ],
     },
-    // {
-    //   name: "Representation",
-    //   options: [
-    //     { name: "Realistic" },
-    //     { name: "Stylized" },
-    //     { name: "Abstract" },
-    //   ],
-    // },
+    {
+      name: "Representation",
+      key: "style",
+      options: [
+        { name: "Realistic", value: "realistic" },
+        { name: "Stylized", value: "stylized" },
+        { name: "Abstract", value: "abstract" },
+        { name: "Mannequin", value: "mannequin" },
+      ],
+    },
   ];
 
   // Add y positions to values
@@ -75,8 +76,6 @@
     .map((d) => {
       return { count: d[1].length, values: d[1][0] };
     });
-
-  console.log(groups);
 
   $: height = currentY + marginBottom;
 
@@ -133,19 +132,32 @@
               cy={valueYMap.get(value)}
               r={5}
               fill="#444"
-            />
+            >
+              <title>
+                {value}
+              </title>
+            </circle>
           {/each}
+          <!-- x axis -->
+          <path
+            d="M{scaleX(index)} {height - marginBottom} v-10"
+            style="stroke: #888"
+          />
+          <text x={scaleX(index)} y={height - 10}>
+            {item.count}
+          </text>
         {/each}
-        <!-- x axis -->
-        <g
-          transform="translate(0, {height - marginBottom})"
-          use:axis={{
-            axis: d3.axisBottom,
-            scale: scaleX,
-            tickFormat: (d) => groups[d].count,
-          }}
+        <path
+          d="M{scaleX(0)} {height - marginBottom - 10} H{width - 10}"
+          style="stroke: #888"
         />
       </svg>
     </div>
   </VisWrapper>
 </main>
+
+<style>
+  text {
+    text-anchor: middle;
+  }
+</style>
