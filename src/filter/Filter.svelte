@@ -6,7 +6,6 @@
   import IconButton from "@smui/icon-button";
   import VisibilityToggle from "./VisibilityToggle.svelte";
   import ItemSelection from "./ItemSelection.svelte";
-  import { unique } from "./lib.js";
 
   let augmReality = "indifferent";
   let virtReality = "indifferent";
@@ -48,7 +47,9 @@
    */
   const filter = () => {
     data = allData.filter((publication) => {
-      // Filter visibility
+      /**
+       * Filter for visibility
+       */
       if (
         !filterVisibility(publication, augmReality, (d) =>
           d.type.includes("ar")
@@ -63,6 +64,9 @@
       ) {
         return false;
       }
+      /**
+       * Filter for item selections
+       */
       // Has at least one selected keyword
       if (d3.intersection(publication.keywords, selectedKeywords).size === 0) {
         return false;
@@ -103,29 +107,17 @@
   }
 </script>
 
-<!--
-@component
-Here's some documentation for this component.
-It will show up on hover.
-
-- You can use markdown here.
-- You can also use code blocks here.
-- Usage:
-  ```tsx
-  <main name="exampleName">
-  ```
--->
 <main>
   <h1>Filter</h1>
 
   <div class="howto">
     <div class="howtogrid">
       <IconButton class="material-icons">visibility</IconButton>
-      <span> <b>Want:</b> Show me! </span>
+      <span> <b>Only:</b> Show only these. </span>
       <IconButton class="material-icons">panorama_fish_eye</IconButton>
       <span> <b>Indifferent:</b> I don't care. </span>
       <IconButton class="material-icons">visibility_off</IconButton>
-      <span> <b>Hide:</b> I'm not interested. </span>
+      <span> <b>Hide:</b> Don't show these. </span>
     </div>
   </div>
 

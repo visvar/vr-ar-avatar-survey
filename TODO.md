@@ -10,7 +10,6 @@
 
 # Tasks
 
-- resize images like on website
 - vis
   - modality
     - x axis labels

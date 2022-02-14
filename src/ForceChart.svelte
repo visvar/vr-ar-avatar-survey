@@ -28,30 +28,26 @@
     .domain([0, d3.max(links, (d) => d.value)]);
 
   let currentTick = 0;
-  $: simulation = d3
+  const simulation = d3
     .forceSimulation()
-    .nodes(data)
-    .force(
-      "link",
-      // d3.forceLink(links).distance((d) => 1 / d.value)
-      d3.forceLink(links).strength((d) => d.value / 200)
-    )
-    .force("charge", d3.forceManyBody().strength(-10))
+    // .alphaMin(0.02)
+    // .alphaDecay(0.1)
     // .force("collide", d3.forceCollide().radius(20))
     // .force("center", d3.forceCenter(width / 2, height / 2).strength(0.1))
-    .alphaMin(0.02)
-    .alphaDecay(0.1)
     // .velocityDecay(0.1)
     .on("tick", () => {
       render_nodes = [...data];
       render_links = [...links];
+      // Scale to fit viewport
       x.domain(d3.extent(render_nodes, (d) => d.x));
       y.domain(d3.extent(render_nodes, (d) => d.y));
+      for (let node of render_nodes) {
+        node.px = x(node.x);
+        node.py = y(node.y);
+      }
+      // Stop after some number of ticks
       currentTick++;
-      console.log(currentTick);
-      // TODO: stop does not work?!
-      if (currentTick > 200) {
-        console.log(simulation);
+      if (currentTick > 150) {
         simulation.stop();
       }
     });
@@ -75,9 +71,18 @@
       }
     }
     if (simulation) {
+      currentTick = 0;
       console.log("restart force sim");
-      // simulation.alpha(1);
-      // simulation.restart();
+      simulation
+        .nodes(data)
+        .alpha(1)
+        .force(
+          "link",
+          // d3.forceLink(links).distance((d) => 1 / d.value)
+          d3.forceLink(links).strength((d) => d.value / 200)
+        )
+        .force("charge", d3.forceManyBody().strength(-10))
+        .restart();
     }
     return links;
   }
@@ -110,12 +115,10 @@
       <svg {width} {height}>
         <!-- Links -->
         <g>
-          {#each render_links as { value, source: { x: x1, y: y1 }, target: { x: x2, y: y2 } }}
+          {#each render_links as { value, source: { px: x1, py: y1 }, target: { px: x2, py: y2 } }}
             {#if value > minCountForLink}
               <path
-                d="M {x(x1)} {y(y1)} L {x(x2)} {y(y2)}"
-                fill="none"
-                stroke="#ddd"
+                d="M {x1} {y1} L {x2} {y2}"
                 stroke-width={strokeWidth(value)}
               />
             {/if}
@@ -125,12 +128,10 @@
         <g>
           {#each render_nodes as node}
             <circle
-              cx={x(node.x)}
-              cy={y(node.y)}
-              r="6"
+              cx={node.px}
+              cy={node.py}
+              r="7"
               fill={colorScale(node.conference)}
-              stroke="white"
-              stroke-width="2"
               on:click={() => {
                 selected = node;
                 console.log(node);
@@ -161,6 +162,17 @@
 </main>
 
 <style>
+  svg path {
+    fill: rgba(0, 0, 0, 0.2);
+    stroke: #ddd;
+  }
+
+  svg circle {
+    stroke: white;
+    stroke-width: 3;
+    cursor: pointer;
+  }
+
   .legend {
     padding: 1em;
     display: grid;

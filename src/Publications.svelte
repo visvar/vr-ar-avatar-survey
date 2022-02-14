@@ -47,11 +47,7 @@
     </Select>
   </div>
   {#each sorted as publication, i (publication.title)}
-    <div
-      class="publication"
-      style={`background-image: url("");`}
-      on:click={() => (selected = publication)}
-    >
+    <div class="publication" on:click={() => (selected = publication)}>
       <img src={getImgSrc(publication.doi)} alt="Publication" />
       <div>
         <h2 class="mdc-typography--headline2" style="font-size: 1.2em;">
