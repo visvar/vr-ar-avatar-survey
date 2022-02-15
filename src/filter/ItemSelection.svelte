@@ -17,7 +17,22 @@
 
 <main>
   <div class="header">
-    <h2>{heading}</h2>
+    <IconButton
+      class="material-icons"
+      title="Show/hide"
+      on:click={() => {
+        collapsed = !collapsed;
+      }}
+    >
+      {collapsed ? "expand_more" : "expand_less"}
+    </IconButton>
+    <h2
+      on:click={() => {
+        collapsed = !collapsed;
+      }}
+    >
+      {heading}
+    </h2>
     <span class="selectedCount">
       {selected.length}/{items.length}
     </span>
@@ -41,15 +56,6 @@
     >
       radio_button_unchecked
     </IconButton>
-    <IconButton
-      class="material-icons"
-      title="Show/hide"
-      on:click={() => {
-        collapsed = !collapsed;
-      }}
-    >
-      {collapsed ? "expand_more" : "expand_less"}
-    </IconButton>
   </div>
   {#if !collapsed}
     <div class="itemContainer">
@@ -67,10 +73,14 @@
 
 <style>
   .header {
-    padding-right: 10px;
+    padding-right: 5px;
     display: grid;
-    grid-template-columns: auto auto repeat(3, 35px);
+    grid-template-columns: 35px auto auto 35px 35px;
     align-items: center;
+  }
+
+  .header h2 {
+    cursor: pointer;
   }
 
   .selectedCount {

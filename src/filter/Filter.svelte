@@ -4,19 +4,7 @@
 
   import * as d3 from "d3";
   import IconButton from "@smui/icon-button";
-  import VisibilityToggle from "./VisibilityToggle.svelte";
   import ItemSelection from "./ItemSelection.svelte";
-
-  let augmReality = "indifferent";
-  let virtReality = "indifferent";
-
-  let colocated = "indifferent";
-  let distributed = "indifferent";
-  let remote = "indifferent";
-
-  let realistic = "indifferent";
-  let stylized = "indifferent";
-  let cartoon = "indifferent";
 
   const sortByCount = (array, accessor = (d) => d) => {
     return d3
@@ -25,6 +13,12 @@
       .map(([key]) => key);
   };
 
+  let immersions = sortByCount(allData.flatMap((d) => d.type));
+  let selectedImmersions = [...immersions];
+  let collaborations = sortByCount(allData.flatMap((d) => d.collaboration));
+  let selectedCollaborations = [...collaborations];
+  let representations = sortByCount(allData.flatMap((d) => d.style));
+  let selectedRepresentations = [...representations];
   let keywords = sortByCount(allData.flatMap((d) => d.keywords));
   let selectedKeywords = [...keywords];
   let technology = sortByCount(allData.flatMap((d) => d.technology));
@@ -32,45 +26,10 @@
   let fieldOfStudy = sortByCount(allData.flatMap((d) => d.fieldOfStudy));
   let selectedFieldOfStudy = [...fieldOfStudy];
 
-  // const filterVisibility = (publication, inputState, checker) => {
-  //   if (inputState === "indifferent") {
-  //     return true;
-  //   } else if (inputState === "show") {
-  //     return checker(publication);
-  //   } else if (inputState === "hide") {
-  //     return !checker(publication);
-  //   }
-  // };
-
-  /**
-   * Filter according to visibility toggles
-   * @param {object} publication publication data
-   * @param {string} inputState current value of the input element
-   * @param {string} key data key
-   * @param {string} value dtaa value
-   */
-  const filterVsb = (publication, inputState, key, value) => {
-    if (inputState === "indifferent") {
-      return true;
-    }
-    const hasValue = publication[key].includes(value);
-
-    if (inputState === "show") {
-      return hasValue;
-    } else if (inputState === "hide") {
-      return !hasValue;
-    }
-  };
-
   $: if (
-    augmReality ||
-    virtReality ||
-    colocated ||
-    distributed ||
-    remote ||
-    realistic ||
-    stylized ||
-    cartoon ||
+    selectedImmersions ||
+    selectedCollaborations ||
+    selectedRepresentations ||
     selectedKeywords ||
     selectedTechnology ||
     selectedFieldOfStudy
@@ -83,35 +42,20 @@
    */
   const filter = () => {
     data = allData.filter((pub) => {
-      /**
-       * Filter for visibility
-       */
-      // Type
-      if (!filterVsb(pub, augmReality, "type", "ar")) return false;
-      if (!filterVsb(pub, virtReality, "type", "vr")) return false;
-      // Collab
-      if (!filterVsb(pub, colocated, "collaboration", "co-located"))
-        return false;
-      if (!filterVsb(pub, distributed, "collaboration", "distibuted"))
-        return false;
-      if (!filterVsb(pub, remote, "collaboration", "remote")) return false;
-      // Representation
-      if (!filterVsb(pub, realistic, "style", "realistic")) return false;
-      if (!filterVsb(pub, stylized, "style", "stylized")) return false;
-      if (!filterVsb(pub, cartoon, "style", "cartoon")) return false;
-      /**
-       * Filter for item selections
-       */
-      // Has at least one selected keyword
-      if (d3.intersection(pub.keywords, selectedKeywords).size === 0) {
-        return false;
-      }
-      // Has at least one selected technology
-      if (d3.intersection(pub.technology, selectedTechnology).size === 0) {
-        return false;
-      }
-      // Has at least one selected field of study
-      if (d3.intersection(pub.fieldOfStudy, selectedFieldOfStudy).size === 0) {
+      if (
+        // Type
+        d3.intersection(pub.type, selectedImmersions).size === 0 ||
+        // Collab
+        d3.intersection(pub.collaboration, selectedCollaborations).size === 0 ||
+        // Representation
+        d3.intersection(pub.style, selectedRepresentations).size === 0 ||
+        // Has at least one selected keyword
+        d3.intersection(pub.keywords, selectedKeywords).size === 0 ||
+        // Has at least one selected technology
+        d3.intersection(pub.technology, selectedTechnology).size === 0 ||
+        // Has at least one selected field of study
+        d3.intersection(pub.fieldOfStudy, selectedFieldOfStudy).size === 0
+      ) {
         return false;
       }
       return true;
@@ -123,53 +67,31 @@
 <main>
   <h1>Filter</h1>
 
-  <div class="howto">
-    <div class="howtogrid">
-      <IconButton class="material-icons">visibility</IconButton>
-      <span> <b>Show:</b> Show these. </span>
-      <IconButton class="material-icons">panorama_fish_eye</IconButton>
-      <span> <b>Indifferent:</b> I don't care. </span>
-      <IconButton class="material-icons">visibility_off</IconButton>
-      <span> <b>Hide:</b> Don't show these. </span>
-    </div>
+  <div class="filterSection">
+    <ItemSelection
+      heading="Immersion"
+      collapsed={false}
+      items={immersions}
+      bind:selected={selectedImmersions}
+    />
   </div>
 
   <div class="filterSection">
-    <h2>Immersion</h2>
-    <div class="grid">
-      <span> augmented reality </span>
-      <VisibilityToggle bind:value={augmReality} />
-      <span> virtual reality </span>
-      <VisibilityToggle bind:value={virtReality} />
-    </div>
+    <ItemSelection
+      heading="Collaboration"
+      collapsed={false}
+      items={collaborations}
+      bind:selected={selectedCollaborations}
+    />
   </div>
 
   <div class="filterSection">
-    <h2>Collaboration Type</h2>
-    <div class="grid">
-      <span> Co-located </span>
-      <VisibilityToggle bind:value={colocated} />
-      <span> Distributed </span>
-      <VisibilityToggle bind:value={distributed} />
-      <span> Remote </span>
-      <VisibilityToggle bind:value={remote} />
-    </div>
-  </div>
-
-  <div class="filterSection">
-    <h2>Representation</h2>
-    <div class="grid">
-      <span> Realistic </span>
-      <VisibilityToggle bind:value={realistic} />
-      <span> Stylized </span>
-      <VisibilityToggle bind:value={stylized} />
-      <span> Cartoon </span>
-      <VisibilityToggle bind:value={cartoon} />
-    </div>
-  </div>
-
-  <div class="filterSection">
-    <h2>Social Interaction</h2>
+    <ItemSelection
+      heading="Representation"
+      collapsed={false}
+      items={representations}
+      bind:selected={selectedRepresentations}
+    />
   </div>
 
   <div class="filterSection">
@@ -221,13 +143,5 @@
     background: var(--accentColor);
     color: #eee;
     border-radius: 5px;
-  }
-
-  .filterSection .grid {
-    padding-left: 5px;
-    display: grid;
-    grid-template-columns: auto 150px;
-    align-items: center;
-    gap: 5px;
   }
 </style>

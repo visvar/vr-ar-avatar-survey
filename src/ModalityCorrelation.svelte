@@ -92,7 +92,11 @@
         if (!modality.shown) {
           continue;
         }
-        setOfPub = [...setOfPub, ...publication[modality.key]];
+        // Remove those that are not specified in modalities
+        const values = publication[modality.key];
+        const allowedValues = modality.options.map((d) => d.value);
+        const newValues = values.filter((d) => allowedValues.includes(d));
+        setOfPub = [...setOfPub, ...newValues];
       }
       sets.push(setOfPub.sort());
     }
@@ -109,7 +113,10 @@
     .domain([0, groups.length - 1])
     .range([marginLeft + 10, width - 10]);
 
-  $: scaleStroke = d3.scaleLinear().domain([0, groups[0].count]).range([0, 4]);
+  $: scaleStroke = d3
+    .scaleLinear()
+    .domain([0, groups[0]?.count ?? 1])
+    .range([0, 4]);
 </script>
 
 <main>
@@ -170,31 +177,24 @@
             y2={d3.max(item.values.map((d) => valueYMap.get(d)))}
             style="stroke: #888; stroke-width: {scaleStroke(item.count)}"
           />
+          <text
+            x={scaleX(index)}
+            y={d3.max(item.values.map((d) => valueYMap.get(d))) + 25}
+          >
+            {item.count}
+            <title>
+              This combination occurs {item.count} times
+            </title>
+          </text>
           {#each item.values as value}
             <circle
               cx={scaleX(index)}
               cy={valueYMap.get(value)}
               r={5}
               fill="#444"
-            >
-              <title>
-                {value}
-              </title>
-            </circle>
+            />
           {/each}
-          <!-- x axis -->
-          <path
-            d="M{scaleX(index)} {height - marginBottom} v-10"
-            style="stroke: #888"
-          />
-          <text x={scaleX(index)} y={height - 10}>
-            {item.count}
-          </text>
         {/each}
-        <path
-          d="M{scaleX(0)} {height - marginBottom - 10} H{width - 10}"
-          style="stroke: #888"
-        />
       </svg>
     </div>
   </VisWrapper>
@@ -221,7 +221,11 @@
   }
 
   svg text {
+    stroke: white;
+    stroke-width: 5;
+    paint-order: stroke;
     transition: all 350ms;
     text-anchor: middle;
+    user-select: none;
   }
 </style>
