@@ -3,6 +3,10 @@
         "title": "FaceBo: Real-time face and body tracking for faithful avatar synthesis",
         "doi": "10.1109/VR.2016.7504735",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Tracking", "Body Ownership", "Embodiment"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "paper",
             "introduces",
@@ -65,6 +69,7 @@
             "avatar",
             "synthesis"
         ],
+        "date": "01.01.2016",
         "year": 2016,
         "citationCount": 9,
         "publisher": "IEEE",
@@ -91,9 +96,6 @@
         ],
         "style": [
             "realistic", "mannequin"
-        ],
-        "bodyRepresentation": [
-            ""
         ],
         "socialInteraction": [
             "facial expression", "eye gaze", "body movement"
@@ -122,6 +124,7 @@
             "tracking"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "Technology comparison",
         "characteristics": null,
         "topic": "Full Body Tracking; Facial Tracking",
@@ -152,6 +155,11 @@
         "title": "Avatar realism and social interaction quality in virtual reality",
         "doi": "10.1109/VR.2016.7504761",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Presence" ],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures"
+        ],
         "abstractWords": [
             "paper",
             "describe",
@@ -213,6 +221,7 @@
             "virtual",
             "reality"
         ],
+        "date": "01.01.2016",
         "year": 2016,
         "citationCount": 88,
         "publisher": "IEEE",
@@ -253,9 +262,7 @@
         "style": [
             "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "physical"
         ],
@@ -287,6 +294,7 @@
             "realism"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "Missing facial cues",
         "characteristics": null,
         "topic": "Facial expression; eye gaze",
@@ -315,6 +323,12 @@
         "title": "Prism aftereffects for throwing with a self-avatar in an immersive virtual environment",
         "doi": "10.1109/VR.2017.7892241",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Tracking", "Presence"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures",
+            "inverse kinematics"
+        ],
         "abstractWords": [
             "first",
             "person",
@@ -408,6 +422,7 @@
             "virtual",
             "environment"
         ],
+        "date": "01.01.2017",
         "year": 2017,
         "citationCount": 12,
         "publisher": "IEEE",
@@ -434,9 +449,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "pointing"
         ],
@@ -465,6 +478,7 @@
             "artificial intelligence"
         ],
         "imagePath": null,
+        "applicationArea": "physical task",
         "useCase": "Visual feedback from self-avatars",
         "characteristics": null,
         "topic": "self-Avatar",
@@ -493,6 +507,12 @@
         "title": "Socially immersive avatar-based communication",
         "doi": "10.1109/VR.2017.7892275",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Presence", "Tracking"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures",
+            "inverse kinematics"
+        ],
         "abstractWords": [
             "paper",
             "siam",
@@ -556,6 +576,7 @@
             "based",
             "communication"
         ],
+        "date": "01.01.2017",
         "year": 2017,
         "citationCount": 14,
         "publisher": "IEEE Computer Society",
@@ -591,9 +612,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "facial expression", "body movement", "voice",  "eye gaze"
         ],
@@ -620,6 +639,7 @@
             "transmission"
         ],
         "imagePath": null,
+        "applicationArea": "social media",
         "useCase": "avatar-mediated communication platform",
         "characteristics": null,
         "topic": null,
@@ -648,6 +668,12 @@
         "title": "Studying the Sense of Embodiment in VR Shared Experiences",
         "doi": "10.1109/VR.2018.8448293",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Embodiment", "Presence", "Body Ownership"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures",
+            "inverse kinematics"
+        ],
         "abstractWords": [
             "paper",
             "explore",
@@ -740,6 +766,7 @@
             "shared",
             "experiences"
         ],
+        "date": "01.01.2018",
         "year": 2018,
         "citationCount": 10,
         "publisher": "IEEE",
@@ -783,9 +810,7 @@
         "style": [
             "realistic", "antropomorphic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement", "voice"
         ],
@@ -812,6 +837,7 @@
             "user engagement"
         ],
         "imagePath": null,
+        "applicationArea": "training",
         "useCase": " influence of sharing a virtual environment with another user",
         "characteristics": null,
         "topic": null,
@@ -840,6 +866,11 @@
         "title": "An Initial Investigation into Stereotypical Influences on Implicit Racial Bias and Embodied Avatars",
         "doi": "10.1109/VR.2019.8798122",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Embodiment", "Presence"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures"
+        ],
         "abstractWords": [
             "paper",
             "initial",
@@ -902,6 +933,7 @@
             "embodied",
             "avatars"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 0,
         "publisher": "IEEE",
@@ -921,9 +953,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "body movement"
         ],
@@ -948,6 +978,7 @@
             "racial bias"
         ],
         "imagePath": null,
+        "applicationArea": "education",
         "useCase": "Implicit Racial Bias ",
         "characteristics": null,
         "topic": "embodied virtual avatars; implicit racial bias; social good",
@@ -976,6 +1007,12 @@
         "title": "Distributed, Collaborative Virtual Reality Application for Product Development with Simple Avatar Calibration Method",
         "doi": "10.1109/VR.2019.8797884",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Presence", "Embodiment"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures",
+            "inverse kinematics"
+        ],
         "abstractWords": [
             "work",
             "collaborative",
@@ -1068,6 +1105,7 @@
             "calibration",
             "method"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 2,
         "publisher": "IEEE",
@@ -1091,9 +1129,7 @@
         "style": [
             "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement"
         ],
@@ -1122,6 +1158,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "engineering",
         "useCase": " distributed engineering tasks",
         "characteristics": null,
         "topic": "measure human body",
@@ -1150,6 +1187,11 @@
         "title": "Shared Body by Action Integration of Two Persons: Body Ownership, Sense of Agency and Task Performance",
         "doi": "10.1109/VR.2019.8798222",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Body Ownership", "Embodiment"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures"
+        ],
         "abstractWords": [
             "humans",
             "one",
@@ -1217,6 +1259,7 @@
             "task",
             "performance"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 1,
         "publisher": "Institute of Electrical and Electronics Engineers Inc.",
@@ -1240,9 +1283,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement", "voice"
         ],
@@ -1268,6 +1309,7 @@
             "body ownership"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "shared body as an avatar that is controlled by two persons’ actions ",
         "characteristics": null,
         "topic": null,
@@ -1297,6 +1339,11 @@
         "title": "Avatars for Co-located Collaborations in HMO-based Virtual Environments",
         "doi": "10.1109/VR.2019.8798132",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Presence"],
+        "bodyRepresentation": [
+            "upper body wiht head",
+            "hand gestures"
+        ],
         "abstractWords": [
             "multi",
             "user",
@@ -1364,6 +1411,7 @@
             "virtual",
             "environments"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 2,
         "publisher": "IEEE",
@@ -1387,9 +1435,7 @@
         "style": [
             "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice"
         ],
@@ -1413,6 +1459,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "engineering",
         "useCase": "Multi-user virtual reality in modern factory hall with",
         "characteristics": null,
         "topic": "Virtual Reality; Co-located Collaborations; Headmounted Display; Avatars; Social Presence",
@@ -1441,6 +1488,12 @@
         "title": "Magnoramas: Magnifying Dioramas for Precise Annotations\nin Asymmetric 3D Teleconsultation",
         "doi": "10.1109/VR50410.2021.00062",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Human factors", "Medical Information System"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures",
+            "inverse kinematics"
+        ],
         "abstractWords": [
             "users",
             "create",
@@ -1557,6 +1610,7 @@
             "3d",
             "teleconsultation"
         ],
+        "date": "01.01.2021",
         "year": 2021,
         "citationCount": 0,
         "publisher": "IEEE",
@@ -1578,11 +1632,9 @@
             "VR", "AR"
         ],
         "style": [
-            "realistic", "hologram", "point cloud"
+            "realistic", "hologram"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement", "voice"
         ],
@@ -1613,6 +1665,7 @@
             "scale"
         ],
         "imagePath": null,
+        "applicationArea": "medicine",
         "useCase": "Drawing in 3D Space and Point Cloud + Avatar Representation",
         "characteristics": "Avatar not discussed",
         "topic": "Medicine",
@@ -1641,6 +1694,11 @@
         "title": "[POSTER] CoVAR: Mixed-Platform Remote Collaborative Augmented\nand Virtual Realities System with Shared Collaboration Cues",
         "doi": "10.1109/ISMAR-ADJUNCT.2017.72",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Tracking", "Embodiment", "Awareness"],
+        "bodyRepresentation": [
+            "head only",
+            "hand gestures"
+        ],
         "abstractWords": [
             "covar",
             "novel",
@@ -1706,6 +1764,7 @@
             "collaboration",
             "cues"
         ],
+        "date": "01.01.2017",
         "year": 2017,
         "citationCount": 18,
         "publisher": "IEEE, Institute of Electrical and Electronics Engineers",
@@ -1735,14 +1794,12 @@
             "remote"
         ],
         "type": [
-            "AR", "VR"
+            "AR", "VR", "MR"
         ],
         "style": [
             "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "eye gaze", "head movement", "hand gestures"
         ],
@@ -1771,6 +1828,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "Virtual Collaboration",
         "characteristics": "Idea and Prototype",
         "topic": "Visual cues",
@@ -1799,6 +1857,10 @@
         "title": "Effects of Hybrid and Synthetic Social Gaze in Avatar-Mediated Interactions",
         "doi": "10.1109/ISMAR-ADJUNCT.2018.00044",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Human factors", "Presence", "Trust"],
+        "bodyRepresentation": [
+            "head only"
+        ],
         "abstractWords": [
             "human",
             "gaze",
@@ -1872,6 +1934,7 @@
             "mediated",
             "interactions"
         ],
+        "date": "01.01.2018",
         "year": 2018,
         "citationCount": 9,
         "publisher": "IEEE",
@@ -1897,11 +1960,9 @@
             "VR"
         ],
         "style": [
-            "stylized", "cartoonized"
+            "stylized"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "eye gaze", "voice", "speech synchronization", "head movement"
         ],
@@ -1929,6 +1990,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "social interaction  in avatar-mediated communication",
         "characteristics": null,
         "topic": "comparing different models of gaze transmission",
@@ -1956,7 +2018,11 @@
     {
         "title": "Demonstrating Emotion Sharing and Augmentation in Cooperative Virtual Reality Games",
         "doi": "10.1145/3270316.3270596",
-        "conference": "Annual Symposium on Computer-Human Interaction in Play",
+        "conference": "Human Factors in Computing Systems",
+        "researchTopics": ["Emotions","Human factors"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "demonstration",
             "two",
@@ -2007,6 +2073,7 @@
             "reality",
             "games"
         ],
+        "date": "01.01.2018",
         "year": 2018,
         "citationCount": 0,
         "publisher": "ACM",
@@ -2030,9 +2097,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "facial expression"
         ],
@@ -2057,6 +2122,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "gaming",
         "useCase": "cooperative social Virtual Reality (VR) games",
         "characteristics": null,
         "topic": "cooperative VR games",
@@ -2085,6 +2151,11 @@
         "title": "Influence of Personality Traits and Body Awareness on the Sense of Embodiment in Virtual Reality",
         "doi": "10.1109/ISMAR.2019.00-12",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Awareness", "Embodiment", "Presence"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures"
+        ],
         "abstractWords": [
             "increasing",
             "avatars",
@@ -2199,6 +2270,7 @@
             "virtual",
             "reality"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 4,
         "publisher": "IEEE",
@@ -2233,9 +2305,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement"
         ],
@@ -2265,6 +2335,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "important to identify the factors eliciting the sense of embodiment or the factors that can disrupt this feeling",
         "characteristics": null,
         "topic": "paper reports an exploratory\nstudy aiming at identifying internal factors (personality traits and\nbody awareness) that might cause either a resistance or a predisposition to feel a sense of embodiment towards a virtual avatar",
@@ -2293,6 +2364,12 @@
         "title": "Mini-Me: An Adaptive Avatar for Mixed Reality Remote Collaboration",
         "doi": "10.1145/3173574.3173620",
         "conference": "Human Factors in Computing Systems",
+        "researchTopics": ["Awareness", "Embodiment", "Human factors"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures",
+            "inverse kinematics"
+        ],
         "abstractWords": [
             "mini",
             "me",
@@ -2352,6 +2429,7 @@
             "remote",
             "collaboration"
         ],
+        "date": "01.01.2018",
         "year": 2018,
         "citationCount": 140,
         "publisher": "ACM",
@@ -2384,16 +2462,14 @@
             "remote", "distributed"
         ],
         "type": [
-            "VR", "AR"
+            "VR", "AR", "MR"
         ],
         "style": [
             "realistic", "hologram"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
-            "body movement", "nonverbal communication", "redirected gaze"
+            "body movement", "non-verbal communication", "redirected gaze"
         ],
         "references": [
             "10.1109/VR.2016.7504726", "10.1109/ISMAR-Adjunct.2017.72"
@@ -2421,6 +2497,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "remote collaboration",
         "characteristics": null,
         "topic": "evaluate Mini-Me in two collaborative scenarios: an asymmetric remote expert in VR assisting a local worker in AR, and a symmetric collaboration in urban planning",
@@ -2442,13 +2519,18 @@
         "noParticipants": 16.0,
         "studyCharacteristics": null,
         "keywords": [
-            "Information systems", "Embodiment", "Mixed reality", "Remote collaboration", "Augmented reality", "Virtual reality", "remote embodiment", "Avatars", "redirected", "Gaze cue", "gaze", "gesture", "Awareness", "remote", "distributed", "realistic", "hologram", "body movement", "nonverbal communication", "redirected gaze"
+            "Information systems", "Embodiment", "Mixed reality", "Remote collaboration", "Augmented reality", "Virtual reality", "remote embodiment", "Avatars", "redirected", "Gaze cue", "gaze", "gesture", "Awareness", "remote", "distributed", "realistic", "hologram", "body movement", "non-verbal communication", "redirected gaze"
         ]
     },
     {
         "title": "Communication Behavior in Embodied Virtual Reality",
         "doi": "10.1145/3173574.3173863",
         "conference": "Human Factors in Computing Systems",
+        "researchTopics": ["Embodiment", "Presence", ""],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures"
+        ],
         "abstractWords": [
             "embodied",
             "virtual",
@@ -2533,6 +2615,7 @@
             "virtual",
             "reality"
         ],
+        "date": "01.01.2018",
         "year": 2018,
         "citationCount": 70,
         "publisher": "ACM",
@@ -2559,9 +2642,7 @@
         "style": [
             "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "emotion", "body movement"
         ],
@@ -2586,6 +2667,7 @@
             "psychology"
         ],
         "imagePath": null,
+        "applicationArea": "interior design",
         "useCase": "embodied virtual reality",
         "characteristics": null,
         "topic": "communication behavior within",
@@ -2614,6 +2696,11 @@
         "title": "Designing a Social VR Clinic for Medical Consultations",
         "doi": "10.1145/3334480.3382836",
         "conference": "Human Factors in Computing Systems",
+        "researchTopics": ["Teleconsultation"],
+        "bodyRepresentation": [
+            "upper body wiht head",
+            "hand gestures"
+        ],
         "abstractWords": [
             "social",
             "virtual",
@@ -2699,6 +2786,7 @@
             "medical",
             "consultations"
         ],
+        "date": "01.01.2020",
         "year": 2020,
         "citationCount": 2,
         "publisher": "Association for Computing Machinery (ACM)",
@@ -2740,9 +2828,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice"
         ],
@@ -2769,6 +2855,7 @@
             "user studies"
         ],
         "imagePath": null,
+        "applicationArea": "medicine",
         "useCase": "knee osteoarthritis consultation",
         "characteristics": null,
         "topic": " social VR clinic that allows patients to consult a nurse represented as a virtual avatar with head, upper body and hands visible",
@@ -2797,6 +2884,11 @@
         "title": "Give-Me-A-Hand: The Effect of Partner’s Gender on Collaboration Quality in Virtual Reality",
         "doi": "10.1145/3411763.3451601",
         "conference": "Human Factors in Computing Systems",
+        "researchTopics": ["Gender conformity"],
+        "bodyRepresentation": [
+            "full-body", 
+            "hand gestures"
+        ],
         "abstractWords": [
             "avatar",
             "appearance",
@@ -2884,6 +2976,7 @@
             "virtual",
             "reality"
         ],
+        "date": "01.01.2021",
         "year": 2021,
         "citationCount": 0,
         "publisher": "ACM",
@@ -2907,9 +3000,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "non-verbal communication", "body movement"
         ],
@@ -2935,6 +3026,7 @@
             "work"
         ],
         "imagePath": null,
+        "applicationArea": "engineering",
         "useCase": "collaboration",
         "characteristics": null,
         "topic": "empower individuals beyond traditional societal gender roles to efectively collaborate in virtual environments",
@@ -2963,6 +3055,13 @@
         "title": "Persuading people in a remote destination to sing by beaming there",
         "doi": "10.1145/2503713.2503724",
         "conference": "Virtual Reality Software and Technology",
+        "researchTopics": ["Human factors", "Presence", "Embodiment", "Body Ownership", "Tracking"],
+        "bodyRepresentation": [
+            "full-body",
+            "vibro-tactile feedback",
+            "hand gestures",
+            "inverse kinematics"
+        ],
         "abstractWords": [
             "built",
             "collaborative",
@@ -3076,6 +3175,7 @@
             "beaming",
             "there"
         ],
+        "date": "01.01.2013",
         "year": 2013,
         "citationCount": 15,
         "publisher": "ACM",
@@ -3104,7 +3204,7 @@
                 "U": "https://dl.acm.org/citation.cfm?doid=2503713.2503724"
             }
         ],
-                "abstract": "We built a Collaborative Virtual Environment (CVE) allowing one person, the 'visitor' to be digitally transported to a remote destination to interact with local people there. This included full body tracking, vibrotactile feedback and voice. This allowed interactions in the same CVE between multiple people situated in different physical remote locations. This system was used for an experiment to study whether the conveyance of touch has an impact on the willingness of participants embodied in the CVE to sing in public.In a first experimental condition, the experimenter virtually touched the avatar of the participants on the shoulder, producing vibrotactile feedback. In another condition using the identical physical setup, the vibrotactile displays were not activated, so that they would not feel the touch. Our hypothesis was that the tactile touch condition would produce a greater likelihood of compliance with the request to sing. In a second part we examined the hypothesis that people might be more willing to sing (execute an embarrassing task) in a CVE, because of the anonymity provided by virtual reality. Hence we carried out a similar study in physical reality.The results suggest that the tactile intervention had no effect on the sensations of body ownership, presence or the behaviours of the participants, in spite of the finding that the sensation of touch itself was effectively realised. Moreover we found an overall similarity in responses between the VR and real conditions.",
+        "abstract": "We built a Collaborative Virtual Environment (CVE) allowing one person, the 'visitor' to be digitally transported to a remote destination to interact with local people there. This included full body tracking, vibrotactile feedback and voice. This allowed interactions in the same CVE between multiple people situated in different physical remote locations. This system was used for an experiment to study whether the conveyance of touch has an impact on the willingness of participants embodied in the CVE to sing in public.In a first experimental condition, the experimenter virtually touched the avatar of the participants on the shoulder, producing vibrotactile feedback. In another condition using the identical physical setup, the vibrotactile displays were not activated, so that they would not feel the touch. Our hypothesis was that the tactile touch condition would produce a greater likelihood of compliance with the request to sing. In a second part we examined the hypothesis that people might be more willing to sing (execute an embarrassing task) in a CVE, because of the anonymity provided by virtual reality. Hence we carried out a similar study in physical reality.The results suggest that the tactile intervention had no effect on the sensations of body ownership, presence or the behaviours of the participants, in spite of the finding that the sensation of touch itself was effectively realised. Moreover we found an overall similarity in responses between the VR and real conditions.",
         "collaboration": [
             "distributed"
         ],
@@ -3114,9 +3214,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "physical"
         ],
@@ -3145,6 +3243,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "collaborative virtual environment",
         "characteristics": null,
         "topic": "allowing one person, the ‘visitor’ to be digitally transported to a remote destination to interact with local people there",
@@ -3163,8 +3262,8 @@
         "hasCollaboration": true,
         "hasStudy": true,
         "questionnaires": "body ownership",
-        "noParticipants": null,
-        "studyCharacteristics": 36,
+        "noParticipants": 36,
+        "studyCharacteristics": null,
         "keywords": [
             "Design", "Experimentation", "Human Factors", "Collaborative Virtual Environment", "Social touch", "Haptic interaction", "Presence", "Embodiment", "distributed", "realistic", "voice", "physical"
         ]
@@ -3173,6 +3272,10 @@
         "title": "SIAMC: a socially immersive avatar mediated communication platform",
         "doi": "10.1145/2993369.2996302",
         "conference": "Virtual Reality Software and Technology",
+        "researchTopics": ["Tracking"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "paper",
             "avatar",
@@ -3211,6 +3314,7 @@
             "communication",
             "platform"
         ],
+        "date": "01.01.2016",
         "year": 2016,
         "citationCount": 15,
         "publisher": "ACM",
@@ -3233,9 +3337,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "facial expression", "body movement"
         ],
@@ -3264,6 +3366,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "collaborative virtual environment",
         "characteristics": null,
         "topic": "avatar-mediated communication platform for socially immersive interaction in virtual reality",
@@ -3292,6 +3395,11 @@
         "title": "Collaborators awareness for user cohabitation in co-located collaborative virtual environments",
         "doi": "10.1145/3139131.3139142",
         "conference": "Virtual Reality Software and Technology",
+        "researchTopics": ["Awareness", "Human factors"],
+        "bodyRepresentation": [
+            "head only",
+            "hand gestures"
+        ],
         "abstractWords": [
             "co",
             "located",
@@ -3391,6 +3499,7 @@
             "virtual",
             "environments"
         ],
+        "date": "01.01.2017",
         "year": 2017,
         "citationCount": 25,
         "publisher": "ACM",
@@ -3424,11 +3533,9 @@
             "VR"
         ],
         "style": [
-            "stylized", "cartoonized", "abstract"
+            "stylized", "stylized", "abstract"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement"
         ],
@@ -3456,6 +3563,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "gaming",
         "useCase": "co-located collaborative virtual environment",
         "characteristics": null,
         "topic": "virtual workspace is larger than the real workspace, navigation interaction techniques must be deployed to let the users explore the entire virtual environment",
@@ -3484,6 +3592,12 @@
         "title": "The effect of avatar realism in immersive social virtual realities",
         "doi": "10.1145/3139131.3139156",
         "conference": "Virtual Reality Software and Technology",
+        "researchTopics": ["Human factors", "Presence", "Body Ownership"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures",
+            "inverse kinematics"
+        ],
         "abstractWords": [
             "paper",
             "investigates",
@@ -3581,6 +3695,7 @@
             "virtual",
             "realities"
         ],
+        "date": "01.01.2017",
         "year": 2017,
         "citationCount": 97,
         "publisher": "ACM",
@@ -3610,9 +3725,7 @@
         "style": [
             "mannequin", "realistic", "point cloud"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "non-verbal communication", "body movement"
         ],
@@ -3641,6 +3754,7 @@
             "virtual space"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "social interactions in Virtual Reality",
         "characteristics": null,
         "topic": "compared\nabstract avatar representations based on a wooden mannequin with high fidelity avatars generated from photogrammetry 3D scan methods",
@@ -3669,6 +3783,11 @@
         "title": "A longitudinal study of small group interaction in social virtual reality",
         "doi": "10.1145/3281505.3281527",
         "conference": "Virtual Reality Software and Technology",
+        "researchTopics": ["Embodiment", "Emotions", "Human factors", "Presence"],
+        "bodyRepresentation": [
+            "head only",
+            "hand gestures"
+        ],
         "abstractWords": [
             "now",
             "high",
@@ -3755,6 +3874,7 @@
             "virtual",
             "reality"
         ],
+        "date": "01.01.2018",
         "year": 2018,
         "citationCount": 32,
         "publisher": "ACM",
@@ -3790,9 +3910,7 @@
         "style": [
             "hologram"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "body movement"
         ],
@@ -3817,6 +3935,7 @@
             "virtual world"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "social virtual reality",
         "characteristics": null,
         "topic": "existing social groups that had become geographically dispersed could use VR for collaborative activities",
@@ -3845,6 +3964,12 @@
         "title": "Exploring the Use of a Robust Depth-sensor-based Avatar Control System and its Effects on Communication Behaviors",
         "doi": "10.1145/3359996.3364267",
         "conference": "Virtual Reality Software and Technology",
+        "researchTopics": ["Tracking", "Body Ownership"],
+        "bodyRepresentation": [
+            "full-body",
+            "inverse kinematics",
+            "hand gestures"
+        ],
         "abstractWords": [
             "interact",
             "fully",
@@ -3950,6 +4075,7 @@
             "communication",
             "behaviors"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 7,
         "publisher": "ACM",
@@ -3981,9 +4107,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "non-verbal communication", "body movement", "facial expression"
         ],
@@ -4011,6 +4135,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "behavioral fidelity of a participant’s virtual body representation",
         "characteristics": null,
         "topic": "a VR interview simulation for a single user to measure the effects on presence, virtual body ownership, workload, usability, and perceived self-performance",
@@ -4039,6 +4164,10 @@
         "title": "The Effects of Self- and External Perception of Avatars on Cognitive Task Performance in Virtual Reality",
         "doi": "10.1145/3385956.3418969",
         "conference": "Virtual Reality Software and Technology",
+        "researchTopics": ["Embodiment", "Body Ownership"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "virtual",
             "reality",
@@ -4120,6 +4249,7 @@
             "virtual",
             "reality"
         ],
+        "date": "01.01.2020",
         "year": 2020,
         "citationCount": 4,
         "publisher": "ACM",
@@ -4143,9 +4273,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "non-verbal communication", "body movement"
         ],
@@ -4173,6 +4301,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "avatar embodiment; cognitive performance; body ownership",
         "characteristics": null,
         "topic": "avatars can change users’ behavior and attitudes. Previous work found that embodying Albert Einstein can increase cognitive task performance",
@@ -4201,6 +4330,10 @@
         "title": "Effects of avatar and background representation forms to co-presence in mixed reality (MR) tele-conference systems",
         "doi": "10.1145/2992138.2992146",
         "conference": "International Conference on Computer Graphics and Interactive Techniques",
+        "researchTopics": ["Teleconsultation", "Presence"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "continued",
             "technology",
@@ -4290,6 +4423,7 @@
             "conference",
             "systems"
         ],
+        "date": "01.01.2016",
         "year": 2016,
         "citationCount": 18,
         "publisher": "ACM",
@@ -4311,14 +4445,12 @@
             "remote"
         ],
         "type": [
-            "AR", "VR"
+            "AR", "VR", "MR"
         ],
         "style": [
-            "realistic", "stylized", "mannequin", "cartoonized"
+            "realistic", "stylized", "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "eye gaze", "body movement"
         ],
@@ -4346,6 +4478,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "tele-conferencing",
         "characteristics": null,
         "topic": "sense of co-presence and effectiveness of the communication",
@@ -4374,6 +4507,11 @@
         "title": "Avatars for Teleconsultation: Effects of Avatar Embodiment Techniques on User Perception in 3D Asymmetric Telepresence",
         "doi": "10.1109/TVCG.2021.3106480",
         "conference": "IEEE Transactions on Visualization and Computer Graphics",
+        "researchTopics": ["Human factors", "Teleconsultation", "Presence"],
+        "bodyRepresentation": [
+            "upper body wiht head",
+            "hand gestures"
+        ],
         "abstractWords": [
             "3d",
             "telepresence",
@@ -4509,6 +4647,7 @@
             "asymmetric",
             "telepresence"
         ],
+        "date": "01.01.2021",
         "year": 2021,
         "citationCount": 0,
         "publisher": "IEEE Computer Society",
@@ -4531,14 +4670,12 @@
             "distributed"
         ],
         "type": [
-            "VR", "AR"
+            "VR", "AR", "MR"
         ],
         "style": [
             "point cloud", "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "facial expression", "body movement", "eye gaze"
         ],
@@ -4567,6 +4704,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "medicine",
         "useCase": "telepresence",
         "characteristics": null,
         "topic": "work compares both techniques to identify the differences between user representations and their fit in the reconstructed environments regarding the perceived presence, uncanny valley factors, and behavior impression",
@@ -4595,6 +4733,12 @@
         "title": "Virtual Co-Embodiment: Evaluation of the Sense of Agency While Sharing the Control of a Virtual Body Among Two Individuals",
         "doi": "10.1109/TVCG.2020.2999197",
         "conference": "IEEE Transactions on Visualization and Computer Graphics",
+        "researchTopics": [ "Embodiment", "Awareness"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures",
+"inverse kinematics"
+        ],
         "abstractWords": [
             "article",
             "introduce",
@@ -4695,6 +4839,7 @@
             "two",
             "individuals"
         ],
+        "date": "01.01.2021",
         "year": 2021,
         "citationCount": 4,
         "publisher": "IEEE",
@@ -4745,9 +4890,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "non-verbal communication"
         ],
@@ -4779,6 +4922,7 @@
             "personality"
         ],
         "imagePath": null,
+        "applicationArea": "training",
         "useCase": "Virtual embodiment, sense of agency",
         "characteristics": null,
         "topic": "introduce a concept called “virtual co-embodiment”, which enables a user to share their virtual avatar with another entity (e.g., another user, robot, or autonomous agent)",
@@ -4807,6 +4951,11 @@
         "title": "FVA: Modeling Perceived Friendliness of Virtual Agents Using Movement Characteristics",
         "doi": "10.1109/TVCG.2019.2932235",
         "conference": "IEEE Transactions on Visualization and Computer Graphics",
+        "researchTopics": ["Trust", "Presence"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures"
+        ],
         "abstractWords": [
             "approach",
             "improving",
@@ -4882,6 +5031,7 @@
             "movement",
             "characteristics"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 10,
         "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
@@ -4925,9 +5075,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement", "eye gaze"
         ],
@@ -4955,6 +5103,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "social perception",
         "characteristics": null,
         "topic": "e present a new approach for improving the friendliness and warmth of a virtual agent in an AR environment by generating appropriate movement characteristics",
@@ -4983,6 +5132,10 @@
         "title": "Future Visions for Higher Education: An Investigation of the Benefits of Virtual Reality for Teaching University Students",
         "doi": "10.1109/ISMAR-ADJUNCT54149.2021.00066",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Presence", "Teleconsultation"],
+        "bodyRepresentation": [
+            "upper body wiht head"
+        ],
         "abstractWords": [
             "sought",
             "understand",
@@ -5115,6 +5268,7 @@
             "university",
             "students"
         ],
+        "date": "01.01.2021",
         "year": 2021,
         "citationCount": 0,
         "publisher": "IEEE",
@@ -5132,11 +5286,9 @@
             "VR"
         ],
         "style": [
-            "stylized", "cartoonized", "animal", "abstract"
+            "stylized", "animal", "abstract"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "body movement"
         ],
@@ -5162,6 +5314,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "education",
         "useCase": null,
         "characteristics": null,
         "topic": "understand the social value to University students of engaging universally in a virtual environment throughout a taught module",
@@ -5190,6 +5343,10 @@
         "title": "ObserVAR: Visualization System for Observing Virtual Reality Users using Augmented Reality",
         "doi": "10.1109/ISMAR.2019.00023",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Presence", "Human factors"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "virtual",
             "reality",
@@ -5284,6 +5441,7 @@
             "using",
             "augmented"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 8,
         "publisher": "IEEE",
@@ -5307,9 +5465,7 @@
         "style": [
             "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "eye gaze"
         ],
@@ -5335,6 +5491,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "education",
         "useCase": "observe the students’ learning activities in a virtual environment\n",
         "characteristics": null,
         "topic": " immersive learning experience",
@@ -5363,6 +5520,11 @@
         "title": "Improving Information Sharing and Collaborative Analysis for Remote GeoSpatial Visualization Using Mixed Reality\n",
         "doi": "10.1109/ISMAR.2019.00021",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Human factors"],
+        "bodyRepresentation": [
+            "full-body",
+            "head only"
+        ],
         "abstractWords": [
             "remote",
             "collaboration",
@@ -5472,6 +5634,7 @@
             "mixed",
             "reality"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 11,
         "publisher": "IEEE",
@@ -5486,14 +5649,12 @@
             "distributed"
         ],
         "type": [
-            "AR"
+            "AR", "MR"
         ],
         "style": [
             "robot", "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement", "voice", "eye gaze"
         ],
@@ -5521,6 +5682,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "GeoSpatial Visualization",
         "characteristics": null,
         "topic": "analyzing\nmulti-attribute and geo-spatial data\n",
@@ -5549,6 +5711,10 @@
         "title": "Does a Digital Assistant Need a Body? The Influence of Visual Embodiment and Social Behavior on the Perception of Intelligent Virtual Agents in AR\n",
         "doi": "10.1109/ISMAR.2018.00039",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Presence", "Trust", "Embodiment"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "intelligent",
             "virtual",
@@ -5672,6 +5838,7 @@
             "in",
             "ar"
         ],
+        "date": "01.01.2018",
         "year": 2018,
         "citationCount": 48,
         "publisher": "IEEE",
@@ -5695,9 +5862,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "facial expression", "body movement"
         ],
@@ -5726,6 +5891,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "Intelligent Virtual Agents",
         "characteristics": null,
         "topic": "In this paper we investigate how visual embodiment and social behaviors influence the perception of the IVA",
@@ -5754,6 +5920,11 @@
         "title": "The Kuroko Paradigm: the Implications of Augmenting Physical\nInteraction with AR Avatars",
         "doi": "10.1109/ISMAR-ADJUNCT.2019.00022",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Human factors"],
+        "bodyRepresentation": [
+            "vibro-tactile feedback",
+            "full-body"
+        ],
         "abstractWords": [
             "propose",
             "concept",
@@ -5834,6 +6005,7 @@
             "ar",
             "avatars"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 0,
         "publisher": "IEEE",
@@ -5851,11 +6023,9 @@
             "AR"
         ],
         "style": [
-            "cartoonized"
+            "stylized"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "physical", "body movement"
         ],
@@ -5880,6 +6050,7 @@
             "user engagement"
         ],
         "imagePath": null,
+        "applicationArea": "physical task",
         "useCase": "Avatars representing over an Robot.",
         "characteristics": "Prototype",
         "topic": "Interactions",
@@ -5908,6 +6079,10 @@
         "title": "Maintaining and Enhancing Human-Surrogate Presence in Augmented Reality\n",
         "doi": "10.1109/ISMARW.2015.13",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Presence", "Awareness", "Human factors"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "background",
             "ideas",
@@ -5958,6 +6133,7 @@
             "augmented",
             "reality"
         ],
+        "date": "01.01.2015",
         "year": 2015,
         "citationCount": 10,
         "publisher": "IEEE",
@@ -5979,14 +6155,12 @@
             "human surrogate"
         ],
         "type": [
-            "AR"
+            "AR", "MR"
         ],
         "style": [
             "realistic", "robot", "hologram"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "non-verbal communication"
         ],
@@ -6013,6 +6187,7 @@
             "sense of presence"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "Displaying Avatars in Real Enviroments, e.g. behind a chair.\n",
         "characteristics": "Problem Discussion",
         "topic": "Real Enviroment and Avatars",
@@ -6041,6 +6216,13 @@
         "title": "The Effect of Avatar Appearance on Social Presence in an Augmented Reality Remote Collaboration\n",
         "doi": "10.1109/VR.2019.8797719",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Presence"],
+        "bodyRepresentation": [
+            "full-body",
+            "upper body wiht head",
+            "hand gestures",
+            "head only"
+        ],
         "abstractWords": [
             "paper",
             "investigates",
@@ -6121,6 +6303,7 @@
             "remote",
             "collaboration"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 23,
         "publisher": "IEEE",
@@ -6142,11 +6325,9 @@
             "AR", "VR"
         ],
         "style": [
-            "cartoonized", "realistic"
+            "stylized", "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "physical", "voice", "body movement"
         ],
@@ -6174,6 +6355,7 @@
             "user studies"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": " Avatar appearance on Social\nPresence and users’ perception in an Augmented Reality (AR) telepresence system",
         "characteristics": "Comparing VR and AR",
         "topic": "Stlye and Body Parts",
@@ -6202,6 +6384,10 @@
         "title": "The Influence of Size in Augmented Reality Telepresence Avatars\n",
         "doi": "10.1109/VR.2019.8798152",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Presence"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "work",
             "explore",
@@ -6288,6 +6474,7 @@
             "telepresence",
             "avatars"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 6,
         "publisher": "IEEE",
@@ -6319,9 +6506,7 @@
         "style": [
             "realistic", "point cloud"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement", "voice"
         ],
@@ -6345,6 +6530,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "telepresence communication through virtual avatars\n",
         "characteristics": "Investigation about the size of an avatar",
         "topic": "Size of an Avatar",
@@ -6373,6 +6559,10 @@
         "title": "Effect of Full Body Avatar in Augmented Reality Remote Collaboration\n",
         "doi": "10.1109/VR.2019.8798044",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Human factors"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "paper",
             "three",
@@ -6416,6 +6606,7 @@
             "remote",
             "collaboration"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 3,
         "publisher": "IEEE",
@@ -6439,9 +6630,7 @@
         "style": [
             "mannequin"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement", "non-verbal communication"
         ],
@@ -6466,6 +6655,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "training",
         "useCase": "Remote Collaboration",
         "characteristics": "1:1 Setup",
         "topic": "Full Body vs. Arm+Hand vs. Hand \n",
@@ -6494,6 +6684,10 @@
         "title": "Welcoming a Holographic Virtual Coach for Balance Training at Home:\n\nTwo Focus Groups with Older Adults",
         "doi": "10.1109/VR.2019.8797813",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Human factors", "Medical Information System", "Presence"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "two",
             "focus",
@@ -6561,6 +6755,7 @@
             "older",
             "adults"
         ],
+        "date": "01.01.2019",
         "year": 2019,
         "citationCount": 5,
         "publisher": "IEEE",
@@ -6582,11 +6777,9 @@
             "AR"
         ],
         "style": [
-            "cartoonized", "realistic"
+            "stylized", "realistic", "point cloud"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "text", "body movement"
         ],
@@ -6613,6 +6806,7 @@
             "balance training"
         ],
         "imagePath": null,
+        "applicationArea": "medicine",
         "useCase": " Blance training at home with an augmented reality\nvirtual coach\n",
         "characteristics": "Nice comparison",
         "topic": "Cartoon vs. Realistic vs. Scan",
@@ -6641,6 +6835,10 @@
         "title": "Redirected Head Gaze to Support AR Meetings Distributed Over\nHeterogeneous Environments\n",
         "doi": "10.1109/VR.2016.7504726",
         "conference": "IEEE Virtual Reality Conference",
+        "researchTopics": ["Teleconsultation", "Awareness"],
+        "bodyRepresentation": [
+            "full-body"
+        ],
         "abstractWords": [
             "redirecting",
             "gaze",
@@ -6702,6 +6900,7 @@
             "heterogeneous",
             "environments"
         ],
+        "date": "01.01.2016",
         "year": 2016,
         "citationCount": 3,
         "publisher": "IEEE",
@@ -6728,9 +6927,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "eye gaze", "voice"
         ],
@@ -6753,6 +6950,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "distributed augmented reality(AR) meetings\n",
         "characteristics": null,
         "topic": "Redirect Head Movement",
@@ -6781,6 +6979,11 @@
         "title": "eyemR-Vis: A Mixed Reality System to Visualise Bi-Directional Gaze Behavioural Cues Between Remote Collaborators\n",
         "doi": "10.1145/3411763.3451545",
         "conference": "Human Factors in Computing Systems",
+        "researchTopics": ["Human factors", "Awareness"],
+        "bodyRepresentation": [
+            "head only",
+            "hand gestures"
+        ],
         "abstractWords": [
             "demonstration",
             "shows",
@@ -6870,6 +7073,7 @@
             "remote",
             "collaborators"
         ],
+        "date": "01.01.2021",
         "year": 2021,
         "citationCount": 1,
         "publisher": "ACM",
@@ -6888,14 +7092,12 @@
             "remote"
         ],
         "type": [
-            "AR"
+            "AR", "MR"
         ],
         "style": [
-            "cartoonized", "stylized"
+            "stylized", "stylized"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "eye gaze", "voice"
         ],
@@ -6923,6 +7125,7 @@
             "computer science"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "a 360 panoramic Mixed Reality collaboration system that translates gaze behavioural cues\nto bi-directional visualisations between a local host (AR) and a remote collaborator (VR)",
         "characteristics": null,
         "topic": "Gaze direction",
@@ -6951,6 +7154,10 @@
         "title": "Comparing Flat and Spherical Displays in a Trust Scenario in Avatar-Mediated Interaction\n",
         "doi": "10.1145/2556288.2557276",
         "conference": "Human Factors in Computing Systems",
+        "researchTopics": ["Trust", "Human factors"],
+        "bodyRepresentation": [
+            "head only"
+        ],
         "abstractWords": [
             "two",
             "experiments",
@@ -7040,6 +7247,7 @@
             "mediated",
             "interaction"
         ],
+        "date": "01.01.2014",
         "year": 2014,
         "citationCount": 21,
         "publisher": "ACM",
@@ -7066,9 +7274,7 @@
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "facial expression", "body movement", "voice"
         ],
@@ -7092,6 +7298,7 @@
             "artificial intelligence"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "two experiments that investigate the influence of display type and viewing angle on how people place their trust during avatar-mediated interaction\n",
         "characteristics": null,
         "topic": "Display Type",
@@ -7120,6 +7327,11 @@
         "title": "A Mixed Reality Telepresence System for Dissimilar Spaces\nUsing Full-Body Avatar",
         "doi": "10.1145/3415256.3421487",
         "conference": "International Conference on Computer Graphics and Interactive Techniques",
+        "researchTopics": ["Presence"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures"
+        ],
         "abstractWords": [
             "novel",
             "mixed",
@@ -7183,6 +7395,7 @@
             "body",
             "avatar"
         ],
+        "date": "01.01.2020",
         "year": 2020,
         "citationCount": 0,
         "publisher": "Association for Computing Machinery, Inc",
@@ -7201,14 +7414,12 @@
             "remote"
         ],
         "type": [
-            "AR"
+            "AR", "MR"
         ],
         "style": [
-            "cartoonized"
+            "stylized"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "voice", "body movement"
         ],
@@ -7233,6 +7444,7 @@
             "deictic gesture"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "We present a novel mixed reality (MR) telepresence system, which\nenables a local user to interact with a remote user through full-body\navatars in their own rooms. If the remote rooms have different size\nand furniture arrangement, directly applying the user’s motion to\nthe avatar leads to mismatch of placement and deictic gesture.",
         "characteristics": null,
         "topic": "Correcting Gestures of Avatars of people two different physical places\n",
@@ -7261,6 +7473,11 @@
         "title": "Multi-scale Mixed Reality Collaboration for Digital Twin",
         "doi": "10.1109/ISMAR-ADJUNCT54149.2021.00098",
         "conference": "International Symposium on Mixed and Augmented Reality",
+        "researchTopics": ["Human factors"],
+        "bodyRepresentation": [
+            "full-body",
+            "hand gestures"
+        ],
         "abstractWords": [
             "poster",
             "digital",
@@ -7311,6 +7528,7 @@
             "digital",
             "twin"
         ],
+        "date": "01.01.2021",
         "year": 2021,
         "citationCount": 0,
         "publisher": "IEEE",
@@ -7325,14 +7543,12 @@
             "remote"
         ],
         "type": [
-            "AR", "VR"
+            "AR", "VR", "MR"
         ],
         "style": [
             "realistic"
         ],
-        "bodyRepresentation": [
-            ""
-        ],
+
         "socialInteraction": [
             "body movement"
         ],
@@ -7361,6 +7577,7 @@
             "collaborative interaction"
         ],
         "imagePath": null,
+        "applicationArea": "general purpose",
         "useCase": "multi-scale mixed reality collaboration",
         "characteristics": null,
         "topic": "a digital twin-based mixed reality system for remote collaboration with the size-scaling of the user and the space",
