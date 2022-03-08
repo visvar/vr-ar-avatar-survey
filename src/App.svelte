@@ -12,6 +12,7 @@
   import LineChart from "./LineChart.svelte";
   import LineChartAlt from "./LineChartAlt.svelte";
   // import RankChart from "./RankChart.svelte";
+  import TableView from "./TableView.svelte";
   import BarChart from "./BarChart.svelte";
   import ForceChart from "./ForceChart.svelte";
   import DRChart from "./DRChart.svelte";
@@ -111,6 +112,7 @@
         <main>
           <Filter {allData} bind:data />
           <div class="visualizationContainer">
+            <TableView {data} width={visWidth} shown={true} />
             <ModalityCorrelation {data} width={visWidth} shown={true} />
             <BubbleChartAlt {data} width={visWidth} shown={true} />
             <DRChart {data} width={visWidth} shown={false} />

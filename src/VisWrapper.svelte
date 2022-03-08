@@ -16,7 +16,7 @@
     >
       {shown ? "expand_less" : "expand_more"}
     </IconButton>
-    <h1
+    <h1 class="separator"
       on:click={() => {
         shown = !shown;
       }}
@@ -41,14 +41,20 @@
     margin-bottom: 20px;
     box-shadow: 0 0 7px #aaa;
     border-radius: 5px;
+    overflow:hidden;
   }
 
   .header {
-    display: grid;
-    grid-template-columns: 40px auto auto;
+    display: flex;
+    align-items: center;
+    gap: 2em;
     margin: 3px 3px 3px 0;
     padding: 3px 4px 2px 0;
     cursor: pointer;
+  }
+
+  .separator {
+    flex-grow: 1;
   }
 
   h1 {

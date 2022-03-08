@@ -49,7 +49,7 @@
         if (data && data.length > 0) {
             const projection = druid.UMAP.transform(D, 15, 1, 1, 2, "precomputed").asArray;
             console.log("projection", projection);
-            grid_size = Math.pow(Math.ceil(Math.log2(data.length) / Math.log2(4)), 2);
+            grid_size = Math.pow(2, Math.ceil(Math.log2(data.length) / Math.log2(4)));
             const gridified = hagrid.gridify(projection, "hilbert");
             console.log("gridified", gridified, grid_size);
             Y = [...gridified];
@@ -128,7 +128,6 @@
 
     #grid-container {
         width: 100%;
-        aspect-ratio: 1;
         display: grid;
         gap: 0.15em;
     }
@@ -136,8 +135,7 @@
     .publication-image {
         width: 100%;
         height: 100%;
-        max-height: 4em;
-        object-fit: scale-down;
+        object-fit: cover;
         object-position: center;
     }
 
@@ -147,6 +145,7 @@
 
     .grid-img-container:hover > img {
         transform: scale(2);
+        object-fit: scale-down;
         filter: drop-shadow(0 0.4em 4px #666);
     }
 </style>
